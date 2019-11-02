@@ -10,7 +10,7 @@ namespace NovaAlianca.Modelo
     public class Controle
     {
         public bool acesso;
-        public string mensagem = "";
+        public string mensagemConexao = "";
 
         public bool Acessar(string login, string senha)
         {
@@ -18,14 +18,15 @@ namespace NovaAlianca.Modelo
             acesso = loginDao.VerificarLogin(login, senha);
             if (!loginDao.mensagem.Equals(""))
             {
-                this.mensagem = loginDao.mensagem;
+                this.mensagemConexao = loginDao.mensagem;
             }
             return acesso;
         }
 
-        public string Cadastrar(string login, string senha, string confSenha)
+        public int QtdPizzasHoje()
         {
-            return mensagem;
+            LoginDaoComandos qtd = new LoginDaoComandos();
+            return qtd.CalcularQtdPizzasHoje();
         }
     }
 }

@@ -37,5 +37,27 @@ namespace NovaAlianca.DAL
             }
             return conexao;
         }
+
+        public int CalcularQtdPizzasHoje()
+        {
+            int qtd = 0;
+            cmd.CommandText = "select count(*) qtd from tblPedido where CONVERT (date, dta_pedido) = CONVERT (date, getdate()) and sta_pedido <> 'C'";
+            cmd.Connection = con.Conectar();
+            try
+            {
+                cmd.Connection = con.Conectar();
+                dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    //PAREI AQUI NÃO ESTA FUNCIONANDO
+                    qtd = Convert.ToInt32(dr[0]);
+                }
+            }
+            catch (Exception)
+            {
+                this.mensagem = "Erro no banco";
+            }
+            return qtd;
+        }
     }
 }

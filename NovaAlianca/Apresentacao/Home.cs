@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NovaAlianca.Modelo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace NovaAlianca.Apresentacao
         public Home()
         {
             InitializeComponent();
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+            Controle controle = new Controle();
+            //controle.Acessar(txtLogin.Text.ToUpper(), txtSenha.Text);
+            lblQtdPizzasHoje.Text = controle.QtdPizzasHoje().ToString();
         }
     }
 }
