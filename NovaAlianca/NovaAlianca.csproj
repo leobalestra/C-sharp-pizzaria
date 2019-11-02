@@ -46,14 +46,83 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Apresentacao\Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Apresentacao\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="Apresentacao\CadastrarFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao\CadastrarFuncionario.Designer.cs">
+      <DependentUpon>CadastrarFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao\CadastrarProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao\CadastrarProduto.Designer.cs">
+      <DependentUpon>CadastrarProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao\Relatorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao\Relatorios.Designer.cs">
+      <DependentUpon>Relatorios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao\CadastarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao\CadastarCliente.Designer.cs">
+      <DependentUpon>CadastarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao\RealizarPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao\RealizarPedido.Designer.cs">
+      <DependentUpon>RealizarPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao\TelaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao\TelaPrincipal.Designer.cs">
+      <DependentUpon>TelaPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Conexao.cs" />
+    <Compile Include="DAL\LoginDaoComandos.cs" />
+    <Compile Include="Modelo\Controle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Apresentacao\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao\CadastrarFuncionario.resx">
+      <DependentUpon>CadastrarFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao\CadastrarProduto.resx">
+      <DependentUpon>CadastrarProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao\Relatorios.resx">
+      <DependentUpon>Relatorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao\CadastarCliente.resx">
+      <DependentUpon>CadastarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao\RealizarPedido.resx">
+      <DependentUpon>RealizarPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao\TelaPrincipal.resx">
+      <DependentUpon>TelaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,6 +131,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -75,6 +145,63 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\padlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loupe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagem1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pizza-na-brasa-sem-emoji.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\725aa2473489db2e550656210c557f18-icone-de-pizza-de-queijo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\makefg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\outline_local_pizza_white_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\outline_perm_identity_white_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\outline_poll_white_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\outline_fastfood_white_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\outline_supervisor_account_white_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\outline_exit_to_app_white_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\outline_exit_to_app_white_18dp1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\outline_supervisor_account_white_18dp1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\outline_fastfood_white_18dp1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\outline_poll_white_18dp1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\outline_perm_identity_white_18dp1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\outline_local_pizza_white_18dp1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
