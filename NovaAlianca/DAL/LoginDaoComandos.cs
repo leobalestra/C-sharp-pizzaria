@@ -41,21 +41,19 @@ namespace NovaAlianca.DAL
         public int CalcularQtdPizzasHoje()
         {
             int qtd = 0;
-            cmd.CommandText = "select count(*) qtd from tblPedido where CONVERT (date, dta_pedido) = CONVERT (date, getdate()) and sta_pedido <> 'C'";
+            cmd.CommandText = "select COUNT(*) qtd from tblPedido where CONVERT (date, dta_pedido) = CONVERT (date, getdate()) and sta_pedido <> 'C'";
             cmd.Connection = con.Conectar();
             try
             {
                 cmd.Connection = con.Conectar();
                 dr = cmd.ExecuteReader();
-                if (dr.HasRows)
-                {
-                    //PAREI AQUI NÃO ESTA FUNCIONANDO
+                dr.Read();
+                if (Convert.ToInt32(dr[0]) > 0)
                     qtd = Convert.ToInt32(dr[0]);
-                }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                this.mensagem = "Erro no banco";
+                this.mensagem = ex.ToString();
             }
             return qtd;
         }
