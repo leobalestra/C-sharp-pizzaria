@@ -13,3 +13,4 @@ C:\Users\lbalestra\source\repos\NovaAlianca\NovaAlianca\obj\Debug\NovaAlianca.Pr
 C:\Users\lbalestra\source\repos\NovaAlianca\NovaAlianca\obj\Debug\NovaAlianca.csproj.GenerateResource.cache
 C:\Users\lbalestra\source\repos\NovaAlianca\NovaAlianca\obj\Debug\NovaAlianca.exe
 C:\Users\lbalestra\source\repos\NovaAlianca\NovaAlianca\obj\Debug\NovaAlianca.pdb
+C:\Users\lbalestra\source\repos\NovaAlianca\NovaAlianca\obj\Debug\NovaAlianca.csprojAssemblyReference.cache

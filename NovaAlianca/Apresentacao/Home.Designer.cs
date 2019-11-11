@@ -32,10 +32,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblQtdPizzasHoje = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -73,12 +73,24 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.flowLayoutPanel1);
+            this.panel1.Controls.Add(this.listView1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(414, 190);
             this.panel1.TabIndex = 3;
+            // 
+            // listView1
+            // 
+            this.listView1.BackColor = System.Drawing.SystemColors.Control;
+            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(15, 40);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(385, 139);
+            this.listView1.TabIndex = 1;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
             // 
             // panel2
             // 
@@ -102,18 +114,11 @@
             this.lblQtdPizzasHoje.AutoSize = true;
             this.lblQtdPizzasHoje.Font = new System.Drawing.Font("Century Gothic", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQtdPizzasHoje.ForeColor = System.Drawing.Color.Maroon;
-            this.lblQtdPizzasHoje.Location = new System.Drawing.Point(54, 55);
+            this.lblQtdPizzasHoje.Location = new System.Drawing.Point(53, 55);
             this.lblQtdPizzasHoje.Name = "lblQtdPizzasHoje";
             this.lblQtdPizzasHoje.Size = new System.Drawing.Size(69, 77);
             this.lblQtdPizzasHoje.TabIndex = 3;
             this.lblQtdPizzasHoje.Text = "0";
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(15, 43);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(386, 134);
-            this.flowLayoutPanel1.TabIndex = 1;
             // 
             // Home
             // 
@@ -143,9 +148,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblQtdPizzasHoje;
+        private System.Windows.Forms.ListView listView1;
     }
 }
