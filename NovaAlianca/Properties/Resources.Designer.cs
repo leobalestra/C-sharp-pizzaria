@@ -103,6 +103,26 @@ namespace NovaAlianca.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap opte_pizza__1_ {
+            get {
+                object obj = ResourceManager.GetObject("opte-pizza (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap opte_pizza__2_ {
+            get {
+                object obj = ResourceManager.GetObject("opte-pizza (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap outline_exit_to_app_white_18dp {
             get {
                 object obj = ResourceManager.GetObject("outline_exit_to_app_white_18dp", resourceCulture);
