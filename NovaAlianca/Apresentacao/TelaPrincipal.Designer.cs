@@ -31,10 +31,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSair = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblUser = new System.Windows.Forms.Label();
-            this.pnlTelas = new System.Windows.Forms.Panel();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnCadastrarFuncionario = new System.Windows.Forms.Button();
             this.btnCadastrarProduto = new System.Windows.Forms.Button();
@@ -42,11 +41,12 @@
             this.btnCadastrarCliente = new System.Windows.Forms.Button();
             this.btnRealizarPedido = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pnlTelas = new System.Windows.Forms.Panel();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -91,6 +91,16 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Pizzaria Nova Aliança - FATEC";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::NovaAlianca.Properties.Resources.makefg;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 8);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(24, 22);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(15)))), ((int)(((byte)(16)))));
@@ -119,20 +129,6 @@
             this.lblUser.Size = new System.Drawing.Size(88, 12);
             this.lblUser.TabIndex = 7;
             this.lblUser.Text = "Usuário conectado:  ";
-            // 
-            // pnlTelas
-            // 
-            this.pnlTelas.BackColor = System.Drawing.Color.White;
-            this.pnlTelas.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlTelas.Location = new System.Drawing.Point(196, 36);
-            this.pnlTelas.Name = "pnlTelas";
-            this.pnlTelas.Size = new System.Drawing.Size(604, 414);
-            this.pnlTelas.TabIndex = 2;
-            // 
-            // toolStripTextBox1
-            // 
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
             // 
             // btnLogout
             // 
@@ -248,15 +244,19 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // pictureBox2
+            // pnlTelas
             // 
-            this.pictureBox2.Image = global::NovaAlianca.Properties.Resources.makefg;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 8);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(24, 22);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.pnlTelas.BackColor = System.Drawing.Color.White;
+            this.pnlTelas.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlTelas.Location = new System.Drawing.Point(196, 36);
+            this.pnlTelas.Name = "pnlTelas";
+            this.pnlTelas.Size = new System.Drawing.Size(604, 414);
+            this.pnlTelas.TabIndex = 2;
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
             // 
             // TelaPrincipal
             // 
@@ -272,10 +272,10 @@
             this.Text = "TelaPrincipal";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

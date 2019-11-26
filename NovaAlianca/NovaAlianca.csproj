@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Apresentacao\EscolherPizza .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao\EscolherPizza .Designer.cs">
+      <DependentUpon>EscolherPizza .cs</DependentUpon>
+    </Compile>
     <Compile Include="Apresentacao\Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,7 +104,20 @@
     <Compile Include="DAL\LoginDaoComandos.cs" />
     <Compile Include="Modelo\Controle.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="ProjetoPizzariaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjetoPizzariaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ProjetoPizzariaDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjetoPizzariaDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Apresentacao\EscolherPizza .resx">
+      <DependentUpon>EscolherPizza .cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Apresentacao\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +152,28 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="ProjetoPizzariaDataSet.xsc">
+      <DependentUpon>ProjetoPizzariaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ProjetoPizzariaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjetoPizzariaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjetoPizzariaDataSet.xss">
+      <DependentUpon>ProjetoPizzariaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ProjetoPizzariaDataSet1.xsc">
+      <DependentUpon>ProjetoPizzariaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ProjetoPizzariaDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjetoPizzariaDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjetoPizzariaDataSet1.xss">
+      <DependentUpon>ProjetoPizzariaDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -208,6 +249,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\opte-pizza %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_button_plus_green_14781.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_sign-add_299068.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_Plus_206460.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

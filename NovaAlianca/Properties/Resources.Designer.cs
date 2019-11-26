@@ -73,6 +73,36 @@ namespace NovaAlianca.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_button_plus_green_14781 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_button_plus_green_14781", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_Plus_206460 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_Plus_206460", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_sign_add_299068 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_sign-add_299068", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Imagem1 {
             get {
                 object obj = ResourceManager.GetObject("Imagem1", resourceCulture);

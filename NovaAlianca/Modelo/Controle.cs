@@ -28,5 +28,17 @@ namespace NovaAlianca.Modelo
             LoginDaoComandos qtd = new LoginDaoComandos();
             return qtd.CalcularQtdPizzasHoje();
         }
+
+        public List<string> PesquisaCliente(int nmrTelefone)
+        {
+            LoginDaoComandos cliente = new LoginDaoComandos();
+            return cliente.PesquisarCliente(nmrTelefone);
+        }
+
+        public string NomeProduto(int idProduto)
+        {
+            LoginDaoComandos produto = new LoginDaoComandos();
+            return produto.PesquisarNomeProduto(idProduto);
+        }
     }
 }

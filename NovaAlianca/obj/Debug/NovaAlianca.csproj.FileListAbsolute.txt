@@ -1,6 +1,7 @@
 C:\Users\lbalestra\source\repos\NovaAlianca\NovaAlianca\bin\Debug\NovaAlianca.exe.config
 C:\Users\lbalestra\source\repos\NovaAlianca\NovaAlianca\bin\Debug\NovaAlianca.exe
 C:\Users\lbalestra\source\repos\NovaAlianca\NovaAlianca\bin\Debug\NovaAlianca.pdb
+C:\Users\lbalestra\source\repos\NovaAlianca\NovaAlianca\obj\Debug\NovaAlianca.Apresentacao.EscolherPizza.resources
 C:\Users\lbalestra\source\repos\NovaAlianca\NovaAlianca\obj\Debug\NovaAlianca.Apresentacao.Home.resources
 C:\Users\lbalestra\source\repos\NovaAlianca\NovaAlianca\obj\Debug\NovaAlianca.Apresentacao.CadastrarFuncionario.resources
 C:\Users\lbalestra\source\repos\NovaAlianca\NovaAlianca\obj\Debug\NovaAlianca.Apresentacao.CadastrarProduto.resources

@@ -82,7 +82,7 @@
             // 
             // listView1
             // 
-            this.listView1.BackColor = System.Drawing.SystemColors.Control;
+            this.listView1.BackColor = System.Drawing.Color.White;
             this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(15, 40);
@@ -124,6 +124,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(609, 383);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
