@@ -71,7 +71,7 @@ namespace NovaAlianca.Apresentacao
 
         private void button1_Click(object sender, EventArgs e)
         {
-            _cdgPizza = Convert.ToInt32(lstSalgada.SelectedIndex.ToString());
+            _cdgPizza = Convert.ToInt32(lstSalgada.SelectedValue);
             EscolherPizza.ActiveForm.Close();
         }
     }

@@ -51,6 +51,8 @@ namespace NovaAlianca.Apresentacao
         {
             EscolherPizza pizza2 = new EscolherPizza();
             pizza2.ShowDialog();
+
+            lblEscolhaPizza2.Text = controle.NomeProduto(EscolherPizza._cdgPizza);
         }
     }
 }

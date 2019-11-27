@@ -38,26 +38,27 @@
             this.btnPesquisarTelefone = new System.Windows.Forms.Button();
             this.lblTituloPizza = new System.Windows.Forms.Label();
             this.lblTituloBebida = new System.Windows.Forms.Label();
-            this.lblTituloResumo = new System.Windows.Forms.Label();
-            this.lblResumo = new System.Windows.Forms.Label();
             this.tblProdutoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.projetoPizzariaDataSet = new NovaAlianca.ProjetoPizzariaDataSet();
             this.tblProdutoTableAdapter = new NovaAlianca.ProjetoPizzariaDataSetTableAdapters.tblProdutoTableAdapter();
             this.lstBebidas = new System.Windows.Forms.ListBox();
             this.btnAdicionarBebida = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.lblTelefone2 = new System.Windows.Forms.Label();
             this.lblEndereco = new System.Windows.Forms.Label();
             this.pnlPedido = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lblEscolhaPizza2 = new System.Windows.Forms.Label();
+            this.lblEscolhaPizza1 = new System.Windows.Forms.Label();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pnlCliente = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.lblUltimoPedido = new System.Windows.Forms.Label();
-            this.lblEscolhaPizza1 = new System.Windows.Forms.Label();
-            this.lblEscolhaPizza2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tblProdutoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projetoPizzariaDataSet)).BeginInit();
             this.pnlPedido.SuspendLayout();
@@ -78,7 +79,7 @@
             // 
             this.lblDadosCliente.AutoSize = true;
             this.lblDadosCliente.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDadosCliente.Location = new System.Drawing.Point(5, 11);
+            this.lblDadosCliente.Location = new System.Drawing.Point(5, 21);
             this.lblDadosCliente.Name = "lblDadosCliente";
             this.lblDadosCliente.Size = new System.Drawing.Size(123, 17);
             this.lblDadosCliente.TabIndex = 3;
@@ -97,7 +98,7 @@
             // 
             this.lblTelefone1.AutoSize = true;
             this.lblTelefone1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefone1.Location = new System.Drawing.Point(5, 113);
+            this.lblTelefone1.Location = new System.Drawing.Point(5, 110);
             this.lblTelefone1.Name = "lblTelefone1";
             this.lblTelefone1.Size = new System.Drawing.Size(0, 17);
             this.lblTelefone1.TabIndex = 5;
@@ -112,9 +113,9 @@
             this.btnPizza2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnPizza2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnPizza2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPizza2.Location = new System.Drawing.Point(105, 45);
+            this.btnPizza2.Location = new System.Drawing.Point(112, 45);
             this.btnPizza2.Name = "btnPizza2";
-            this.btnPizza2.Size = new System.Drawing.Size(93, 179);
+            this.btnPizza2.Size = new System.Drawing.Size(69, 137);
             this.btnPizza2.TabIndex = 7;
             this.btnPizza2.UseVisualStyleBackColor = false;
             this.btnPizza2.Click += new System.EventHandler(this.btnPizza2_Click);
@@ -130,9 +131,9 @@
             this.btnPizza1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnPizza1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPizza1.ForeColor = System.Drawing.Color.Transparent;
-            this.btnPizza1.Location = new System.Drawing.Point(9, 45);
+            this.btnPizza1.Location = new System.Drawing.Point(37, 45);
             this.btnPizza1.Name = "btnPizza1";
-            this.btnPizza1.Size = new System.Drawing.Size(93, 179);
+            this.btnPizza1.Size = new System.Drawing.Size(65, 137);
             this.btnPizza1.TabIndex = 6;
             this.btnPizza1.UseVisualStyleBackColor = false;
             this.btnPizza1.Click += new System.EventHandler(this.btnPizza1_Click);
@@ -141,7 +142,7 @@
             // 
             this.btnPesquisarTelefone.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnPesquisarTelefone.Image = global::NovaAlianca.Properties.Resources.loupe;
-            this.btnPesquisarTelefone.Location = new System.Drawing.Point(161, 46);
+            this.btnPesquisarTelefone.Location = new System.Drawing.Point(123, 46);
             this.btnPesquisarTelefone.Name = "btnPesquisarTelefone";
             this.btnPesquisarTelefone.Size = new System.Drawing.Size(30, 25);
             this.btnPesquisarTelefone.TabIndex = 1;
@@ -163,31 +164,11 @@
             // 
             this.lblTituloBebida.AutoSize = true;
             this.lblTituloBebida.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloBebida.Location = new System.Drawing.Point(5, 262);
+            this.lblTituloBebida.Location = new System.Drawing.Point(5, 265);
             this.lblTituloBebida.Name = "lblTituloBebida";
             this.lblTituloBebida.Size = new System.Drawing.Size(69, 21);
             this.lblTituloBebida.TabIndex = 9;
             this.lblTituloBebida.Text = "Bebida:";
-            // 
-            // lblTituloResumo
-            // 
-            this.lblTituloResumo.AutoSize = true;
-            this.lblTituloResumo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloResumo.Location = new System.Drawing.Point(216, 10);
-            this.lblTituloResumo.Name = "lblTituloResumo";
-            this.lblTituloResumo.Size = new System.Drawing.Size(75, 21);
-            this.lblTituloResumo.TabIndex = 10;
-            this.lblTituloResumo.Text = "Resumo:";
-            // 
-            // lblResumo
-            // 
-            this.lblResumo.AutoSize = true;
-            this.lblResumo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResumo.Location = new System.Drawing.Point(217, 50);
-            this.lblResumo.Name = "lblResumo";
-            this.lblResumo.Size = new System.Drawing.Size(27, 68);
-            this.lblResumo.TabIndex = 11;
-            this.lblResumo.Text = "1 - \r\n2 -\r\n3 -\r\n4 -";
             // 
             // tblProdutoBindingSource
             // 
@@ -211,43 +192,35 @@
             this.lstBebidas.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstBebidas.FormattingEnabled = true;
             this.lstBebidas.ItemHeight = 17;
-            this.lstBebidas.Location = new System.Drawing.Point(9, 286);
+            this.lstBebidas.Location = new System.Drawing.Point(9, 289);
             this.lstBebidas.Name = "lstBebidas";
-            this.lstBebidas.Size = new System.Drawing.Size(169, 85);
+            this.lstBebidas.Size = new System.Drawing.Size(207, 68);
             this.lstBebidas.TabIndex = 12;
             this.lstBebidas.ValueMember = "id_produto";
             // 
             // btnAdicionarBebida
             // 
-            this.btnAdicionarBebida.BackColor = System.Drawing.Color.LightCoral;
+            this.btnAdicionarBebida.BackColor = System.Drawing.Color.Maroon;
             this.btnAdicionarBebida.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdicionarBebida.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
             this.btnAdicionarBebida.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Brown;
             this.btnAdicionarBebida.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnAdicionarBebida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionarBebida.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdicionarBebida.ForeColor = System.Drawing.Color.Red;
-            this.btnAdicionarBebida.Image = global::NovaAlianca.Properties.Resources.iconfinder_Plus_206460;
-            this.btnAdicionarBebida.Location = new System.Drawing.Point(184, 299);
+            this.btnAdicionarBebida.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdicionarBebida.ForeColor = System.Drawing.Color.White;
+            this.btnAdicionarBebida.Location = new System.Drawing.Point(9, 365);
             this.btnAdicionarBebida.Name = "btnAdicionarBebida";
-            this.btnAdicionarBebida.Size = new System.Drawing.Size(21, 58);
+            this.btnAdicionarBebida.Size = new System.Drawing.Size(207, 23);
             this.btnAdicionarBebida.TabIndex = 13;
+            this.btnAdicionarBebida.Text = "Adicionar";
+            this.btnAdicionarBebida.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnAdicionarBebida.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(9, 34);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(196, 181);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // lblTelefone2
             // 
             this.lblTelefone2.AutoSize = true;
             this.lblTelefone2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefone2.Location = new System.Drawing.Point(5, 130);
+            this.lblTelefone2.Location = new System.Drawing.Point(5, 127);
             this.lblTelefone2.Name = "lblTelefone2";
             this.lblTelefone2.Size = new System.Drawing.Size(0, 17);
             this.lblTelefone2.TabIndex = 15;
@@ -256,7 +229,7 @@
             // 
             this.lblEndereco.AutoSize = true;
             this.lblEndereco.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEndereco.Location = new System.Drawing.Point(5, 184);
+            this.lblEndereco.Location = new System.Drawing.Point(5, 174);
             this.lblEndereco.Name = "lblEndereco";
             this.lblEndereco.Size = new System.Drawing.Size(0, 17);
             this.lblEndereco.TabIndex = 16;
@@ -264,21 +237,67 @@
             // pnlPedido
             // 
             this.pnlPedido.Controls.Add(this.lblEscolhaPizza2);
+            this.pnlPedido.Controls.Add(this.label7);
             this.pnlPedido.Controls.Add(this.lblEscolhaPizza1);
+            this.pnlPedido.Controls.Add(this.label6);
+            this.pnlPedido.Controls.Add(this.groupBox1);
             this.pnlPedido.Controls.Add(this.button1);
             this.pnlPedido.Controls.Add(this.btnAdicionarBebida);
             this.pnlPedido.Controls.Add(this.lstBebidas);
-            this.pnlPedido.Controls.Add(this.lblResumo);
-            this.pnlPedido.Controls.Add(this.lblTituloResumo);
             this.pnlPedido.Controls.Add(this.lblTituloBebida);
             this.pnlPedido.Controls.Add(this.lblTituloPizza);
             this.pnlPedido.Controls.Add(this.btnPizza2);
             this.pnlPedido.Controls.Add(this.btnPizza1);
-            this.pnlPedido.Location = new System.Drawing.Point(206, 4);
+            this.pnlPedido.Location = new System.Drawing.Point(166, 4);
             this.pnlPedido.Name = "pnlPedido";
-            this.pnlPedido.Size = new System.Drawing.Size(534, 463);
+            this.pnlPedido.Size = new System.Drawing.Size(534, 412);
             this.pnlPedido.TabIndex = 17;
             this.pnlPedido.Visible = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(226, 11);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(190, 304);
+            this.groupBox1.TabIndex = 19;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Resumo:";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Maroon;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Brown;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(9, 228);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(207, 24);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Adicionar";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // lblEscolhaPizza2
+            // 
+            this.lblEscolhaPizza2.AutoSize = true;
+            this.lblEscolhaPizza2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEscolhaPizza2.Location = new System.Drawing.Point(43, 205);
+            this.lblEscolhaPizza2.Name = "lblEscolhaPizza2";
+            this.lblEscolhaPizza2.Size = new System.Drawing.Size(0, 16);
+            this.lblEscolhaPizza2.TabIndex = 17;
+            // 
+            // lblEscolhaPizza1
+            // 
+            this.lblEscolhaPizza1.AutoSize = true;
+            this.lblEscolhaPizza1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEscolhaPizza1.Location = new System.Drawing.Point(43, 188);
+            this.lblEscolhaPizza1.Name = "lblEscolhaPizza1";
+            this.lblEscolhaPizza1.Size = new System.Drawing.Size(0, 16);
+            this.lblEscolhaPizza1.TabIndex = 15;
             // 
             // maskedTextBox1
             // 
@@ -286,7 +305,7 @@
             this.maskedTextBox1.Mask = "(00) 000000009";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.PromptChar = ' ';
-            this.maskedTextBox1.Size = new System.Drawing.Size(139, 20);
+            this.maskedTextBox1.Size = new System.Drawing.Size(101, 20);
             this.maskedTextBox1.TabIndex = 18;
             this.maskedTextBox1.Text = "1132254444";
             // 
@@ -304,7 +323,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(5, 97);
+            this.label3.Location = new System.Drawing.Point(5, 89);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 16);
             this.label3.TabIndex = 20;
@@ -314,7 +333,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(5, 168);
+            this.label4.Location = new System.Drawing.Point(5, 158);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 16);
             this.label4.TabIndex = 21;
@@ -334,44 +353,48 @@
             this.pnlCliente.Controls.Add(this.lblDadosCliente);
             this.pnlCliente.Location = new System.Drawing.Point(8, 87);
             this.pnlCliente.Name = "pnlCliente";
-            this.pnlCliente.Size = new System.Drawing.Size(182, 321);
+            this.pnlCliente.Size = new System.Drawing.Size(145, 321);
             this.pnlCliente.TabIndex = 22;
             this.pnlCliente.Visible = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(5, 240);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 16);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "Último pedido:";
             // 
             // lblUltimoPedido
             // 
             this.lblUltimoPedido.AutoSize = true;
             this.lblUltimoPedido.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUltimoPedido.Location = new System.Drawing.Point(5, 256);
+            this.lblUltimoPedido.Location = new System.Drawing.Point(5, 240);
             this.lblUltimoPedido.Name = "lblUltimoPedido";
             this.lblUltimoPedido.Size = new System.Drawing.Size(0, 17);
             this.lblUltimoPedido.TabIndex = 23;
             // 
-            // lblEscolhaPizza1
+            // label5
             // 
-            this.lblEscolhaPizza1.AutoSize = true;
-            this.lblEscolhaPizza1.Location = new System.Drawing.Point(9, 231);
-            this.lblEscolhaPizza1.Name = "lblEscolhaPizza1";
-            this.lblEscolhaPizza1.Size = new System.Drawing.Size(0, 13);
-            this.lblEscolhaPizza1.TabIndex = 15;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(5, 224);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(87, 16);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Último pedido:";
             // 
-            // lblEscolhaPizza2
+            // label6
             // 
-            this.lblEscolhaPizza2.AutoSize = true;
-            this.lblEscolhaPizza2.Location = new System.Drawing.Point(170, 231);
-            this.lblEscolhaPizza2.Name = "lblEscolhaPizza2";
-            this.lblEscolhaPizza2.Size = new System.Drawing.Size(0, 13);
-            this.lblEscolhaPizza2.TabIndex = 16;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(6, 188);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(42, 16);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Meia: ";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(6, 205);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(42, 16);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Meia: ";
             // 
             // RealizarPedido
             // 
@@ -409,14 +432,11 @@
         private System.Windows.Forms.Button btnPizza2;
         private System.Windows.Forms.Label lblTituloPizza;
         private System.Windows.Forms.Label lblTituloBebida;
-        private System.Windows.Forms.Label lblTituloResumo;
-        private System.Windows.Forms.Label lblResumo;
         private ProjetoPizzariaDataSet projetoPizzariaDataSet;
         private System.Windows.Forms.BindingSource tblProdutoBindingSource;
         private ProjetoPizzariaDataSetTableAdapters.tblProdutoTableAdapter tblProdutoTableAdapter;
         private System.Windows.Forms.ListBox lstBebidas;
         private System.Windows.Forms.Button btnAdicionarBebida;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblTelefone2;
         private System.Windows.Forms.Label lblEndereco;
         private System.Windows.Forms.Panel pnlPedido;
@@ -427,7 +447,11 @@
         private System.Windows.Forms.Panel pnlCliente;
         private System.Windows.Forms.Label lblUltimoPedido;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblEscolhaPizza2;
         private System.Windows.Forms.Label lblEscolhaPizza1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblEscolhaPizza2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
     }
 }
