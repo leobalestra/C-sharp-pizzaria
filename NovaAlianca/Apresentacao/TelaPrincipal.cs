@@ -52,7 +52,7 @@ namespace NovaAlianca.Apresentacao
         #endregion
 
         #region BotoesLaterais
-        private void AbrirFormInPanel(object Formfilho)
+        public void AbrirFormInPanel(object Formfilho)
         {
             if (this.pnlTelas.Controls.Count > 0)
                 this.pnlTelas.Controls.RemoveAt(0);
@@ -65,7 +65,7 @@ namespace NovaAlianca.Apresentacao
             fh.Show();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        public void pictureBox1_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new Home());
             btnRealizarPedido.BackColor = Color.FromArgb(171, 15, 16);

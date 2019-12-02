@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Apresentacao\FinalizarPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao\FinalizarPedido.Designer.cs">
+      <DependentUpon>FinalizarPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Apresentacao\EscolherPizza .cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
       <DependentUpon>ProjetoPizzariaDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Apresentacao\FinalizarPedido.resx">
+      <DependentUpon>FinalizarPedido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Apresentacao\EscolherPizza .resx">
       <DependentUpon>EscolherPizza .cs</DependentUpon>
     </EmbeddedResource>
@@ -258,6 +267,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\iconfinder_Plus_206460.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\41462-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

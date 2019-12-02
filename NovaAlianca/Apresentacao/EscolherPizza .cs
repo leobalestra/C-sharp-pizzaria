@@ -21,9 +21,7 @@ namespace NovaAlianca.Apresentacao
 
         private void EscolherPizza_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'projetoPizzariaDataSet1.tblProduto'. Você pode movê-la ou removê-la conforme necessário.
             this.tblProdutoTableAdapter.Fill(this.projetoPizzariaDataSet1.tblProduto);
-
         }
 
         private void btnSair_Click(object sender, EventArgs e)

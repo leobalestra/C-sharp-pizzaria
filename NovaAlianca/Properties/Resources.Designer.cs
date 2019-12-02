@@ -63,6 +63,16 @@ namespace NovaAlianca.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _41462_200 {
+            get {
+                object obj = ResourceManager.GetObject("41462-200", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _725aa2473489db2e550656210c557f18_icone_de_pizza_de_queijo {
             get {
                 object obj = ResourceManager.GetObject("725aa2473489db2e550656210c557f18-icone-de-pizza-de-queijo", resourceCulture);
@@ -106,6 +116,26 @@ namespace NovaAlianca.Properties {
         internal static System.Drawing.Bitmap Imagem1 {
             get {
                 object obj = ResourceManager.GetObject("Imagem1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap images {
+            get {
+                object obj = ResourceManager.GetObject("images", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap images1 {
+            get {
+                object obj = ResourceManager.GetObject("images1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

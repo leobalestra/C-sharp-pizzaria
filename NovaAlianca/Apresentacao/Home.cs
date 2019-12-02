@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,8 @@ namespace NovaAlianca.Apresentacao
 {
     public partial class Home : Form
     {
+        Controle controle = new Controle();
+
         public Home()
         {
             InitializeComponent();
@@ -20,25 +23,70 @@ namespace NovaAlianca.Apresentacao
 
         private void Home_Load(object sender, EventArgs e)
         {
-            Controle controle = new Controle();
-            //controle.Acessar(txtLogin.Text.ToUpper(), txtSenha.Text);
             lblQtdPizzasHoje.Text = controle.QtdPizzasHoje().ToString();
-
-            listView1.View = View.Details;
-            listView1.Columns.Add("", 250);
-            popularList();
+            PizzasEmAndamento();
+            PizzasEntregues();
         }
 
-        private void popularList()
+        private void PizzasEntregues()
         {
-            listView1.Items.Add("Leonardo", 0);
-            listView1.Items.Add("TESTEE", 0);
-            listView1.Items.Add("LASHDD", 0);
-            listView1.Items.Add("XXXXXX", 0);
-            listView1.Items.Add("VVVVVV", 0);
-            listView1.Items.Add("RRRRRR", 0);
-            listView1.Items.Add("ÇÇÇÇÇÇ", 0);
-            listView1.Items.Add("YYYYYY", 0);
+            List<string> pizzasEntregues = new List<string>();
+            pizzasEntregues = controle.PizzasEntregues();
+            lstUltimosPedidos.Columns.Add("");
+            ListViewItem item;
+            for (int i = 0; i < pizzasEntregues.Count; i++)
+            {
+                item = new ListViewItem();
+                item.Text = pizzasEntregues[i].ToString();
+                lstUltimosPedidos.Items.Add(item.Text);
+            }
+        }
+
+        private void PizzasEmAndamento()
+        {
+            ImageList imgs = new ImageList();
+            imgs.ImageSize = new Size(15, 15);
+            String[] paths = { };
+            paths = Directory.GetFiles("imagens");
+            foreach (String path in paths)
+            {
+                imgs.Images.Add(Image.FromFile(path));
+            }
+
+            List<string> pizzasAndamento = new List<string>();
+            pizzasAndamento = controle.PizzasEmAndamento();
+            lstPizzaAndamento.Columns.Add("");
+            ListViewItem item;
+            lstPizzaAndamento.SmallImageList = imgs;
+            for (int i = 0; i < pizzasAndamento.Count; i++)
+            {
+                TimeSpan tempo;
+                int indexImage;
+                item = new ListViewItem();
+                item.Text = pizzasAndamento[i].ToString();
+                tempo = Convert.ToDateTime(DateTime.Now.ToString("HH:mm:ss")) - Convert.ToDateTime(item.Text.Substring(0, 8));
+                if (Convert.ToInt32(Convert.ToDouble(tempo.TotalMinutes)) < 20)
+                    indexImage = 0;
+                else if (Convert.ToInt32(Convert.ToDouble(tempo.TotalMinutes)) < 40)
+                    indexImage = 1;
+                else
+                    indexImage = 2;
+                lstPizzaAndamento.Items.Add(" "+Convert.ToInt32(Convert.ToDouble(tempo.TotalMinutes)).ToString()+"min | " +item.Text, indexImage);
+            }
+        }
+
+        private void btnFinalizarPizza_Click(object sender, EventArgs e)
+        {
+            
+            string linha = lstPizzaAndamento.SelectedItems[0].Text;
+            int cdgPedido = Convert.ToInt32(linha.Substring(linha.IndexOf('(')+1, (linha.IndexOf(')') - linha.IndexOf('('))-1));
+            DialogResult confirm = MessageBox.Show("Deseja Finalizar o pedido "+ cdgPedido+ "? ", "Finalizar pedido", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+            if (confirm.ToString().ToUpper() == "YES")
+            {
+                controle.FinalizarPedido(cdgPedido);
+                lstPizzaAndamento.Clear();
+                PizzasEmAndamento();
+            }               
         }
     }
 }

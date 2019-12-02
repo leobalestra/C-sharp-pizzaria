@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace NovaAlianca.Modelo
 {
@@ -29,7 +30,19 @@ namespace NovaAlianca.Modelo
             return qtd.CalcularQtdPizzasHoje();
         }
 
-        public List<string> PesquisaCliente(int nmrTelefone)
+        internal List<string> PizzasEntregues()
+        {
+            LoginDaoComandos pizzas = new LoginDaoComandos();
+            return pizzas.CarregarPizzasEntregues();
+        }
+
+        public List<string> PizzasEmAndamento()
+        {
+            LoginDaoComandos pizzas = new LoginDaoComandos();
+            return pizzas.CarregarPizzasAndamento();
+        }
+
+        public List<string> PesquisaCliente(long nmrTelefone)
         {
             LoginDaoComandos cliente = new LoginDaoComandos();
             return cliente.PesquisarCliente(nmrTelefone);
@@ -39,6 +52,30 @@ namespace NovaAlianca.Modelo
         {
             LoginDaoComandos produto = new LoginDaoComandos();
             return produto.PesquisarNomeProduto(idProduto);
+        }
+
+        public double ValorPedido(ListBox lstPedido)
+        {
+            LoginDaoComandos valorTotal = new LoginDaoComandos();
+            return valorTotal.ValorTotalPedido(lstPedido);
+        }
+
+        public int MontarComanda(List<string> comanda)
+        {
+            LoginDaoComandos idcomanda = new LoginDaoComandos();
+            return idcomanda.MontarComanda(comanda);
+        }
+
+        public bool InserirPedido(int idCliente, int comanda, string loginAtual, string tpoPagamento, decimal vlrTroco)
+        {
+            LoginDaoComandos idpedido = new LoginDaoComandos();
+            return idpedido.InserirPedido(idCliente, comanda, loginAtual, tpoPagamento, vlrTroco);
+        }
+
+        public bool FinalizarPedido(int cdgPedido)
+        {
+            LoginDaoComandos idpedido = new LoginDaoComandos();
+            return idpedido.FinalizarPedido(cdgPedido);
         }
     }
 }
