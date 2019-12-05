@@ -30,15 +30,30 @@ namespace NovaAlianca.Apresentacao
 
         private void PizzasEntregues()
         {
+            ImageList imga = new ImageList();
+            imga.ImageSize = new Size(15, 15);
+            String[] paths = { };
+            paths = Directory.GetFiles("imagens");
+            foreach (String path in paths)
+            {
+                imga.Images.Add(Image.FromFile(path));
+            }
+
             List<string> pizzasEntregues = new List<string>();
             pizzasEntregues = controle.PizzasEntregues();
             lstUltimosPedidos.Columns.Add("");
             ListViewItem item;
+            lstUltimosPedidos.SmallImageList = imga;
             for (int i = 0; i < pizzasEntregues.Count; i++)
             {
+                int indexImage;
                 item = new ListViewItem();
                 item.Text = pizzasEntregues[i].ToString();
-                lstUltimosPedidos.Items.Add(item.Text);
+                if (item.Text.Substring(0,1) == "C")
+                    indexImage = 4;
+                else
+                    indexImage = 3;
+                lstUltimosPedidos.Items.Add(item.Text+"          ", indexImage);
             }
         }
 
@@ -77,16 +92,42 @@ namespace NovaAlianca.Apresentacao
 
         private void btnFinalizarPizza_Click(object sender, EventArgs e)
         {
-            
-            string linha = lstPizzaAndamento.SelectedItems[0].Text;
-            int cdgPedido = Convert.ToInt32(linha.Substring(linha.IndexOf('(')+1, (linha.IndexOf(')') - linha.IndexOf('('))-1));
-            DialogResult confirm = MessageBox.Show("Deseja Finalizar o pedido "+ cdgPedido+ "? ", "Finalizar pedido", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
-            if (confirm.ToString().ToUpper() == "YES")
+            if (this.lstPizzaAndamento.SelectedItems.Count > 0)
             {
-                controle.FinalizarPedido(cdgPedido);
-                lstPizzaAndamento.Clear();
-                PizzasEmAndamento();
-            }               
+                string linha = lstPizzaAndamento.SelectedItems[0].Text;
+                int cdgPedido = Convert.ToInt32(linha.Substring(linha.IndexOf('(') + 5, (linha.IndexOf(')') - linha.IndexOf('(')) - 5));
+                DialogResult confirm = MessageBox.Show("Deseja Finalizar o pedido " + cdgPedido + "? ", "Finalizar pedido", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                if (confirm.ToString().ToUpper() == "YES")
+                {
+                    controle.FinalizarPedido(cdgPedido);
+                    lstPizzaAndamento.Clear();
+                    PizzasEmAndamento();
+                    lstUltimosPedidos.Clear();
+                    PizzasEntregues();
+                }
+            }    
+            else
+                MessageBox.Show("Escolha uma pizza para Finalizar!");
+        }
+
+        private void btnCancelarPizza_Click(object sender, EventArgs e)
+        {
+            if (this.lstPizzaAndamento.SelectedItems.Count > 0)
+            {
+                string linha = lstPizzaAndamento.SelectedItems[0].Text;
+                int cdgPedido = Convert.ToInt32(linha.Substring(linha.IndexOf('(') + 5, (linha.IndexOf(')') - linha.IndexOf('(')) - 5));
+                DialogResult confirm = MessageBox.Show("Deseja Cancelar o pedido " + cdgPedido + "? ", "Cancelar pedido", MessageBoxButtons.YesNo, MessageBoxIcon.Error, MessageBoxDefaultButton.Button2);
+                if (confirm.ToString().ToUpper() == "YES")
+                {
+                    controle.CancelarPedido(cdgPedido);
+                    lstPizzaAndamento.Clear();
+                    PizzasEmAndamento();
+                    lstUltimosPedidos.Clear();
+                    PizzasEntregues();
+                }
+            }
+            else
+                MessageBox.Show("Escolha uma pizza para Cancelar!");
         }
     }
 }

@@ -21,7 +21,7 @@ namespace NovaAlianca.Apresentacao
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-            TelaPrincipal.ActiveForm.Close();
+            Application.Exit();
         }
 
         #region ArrastarMouse
@@ -123,6 +123,13 @@ namespace NovaAlianca.Apresentacao
             btnRelatorios.BackColor = Color.FromArgb(171, 15, 16);
             btnCadastrarProduto.BackColor = Color.FromArgb(171, 15, 16);
             btnCadastrarFuncionario.BackColor = Color.FromArgb(102, 0, 0);
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult confirm = MessageBox.Show("Deseja sair do sistema?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (confirm.ToString().ToUpper() == "YES")
+                Application.Exit();
         }
         #endregion
     }

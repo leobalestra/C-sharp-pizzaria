@@ -66,7 +66,6 @@
             this.btnPesquisarTelefone = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tblProdutoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projetoPizzariaDataSet)).BeginInit();
             this.pnlPedido.SuspendLayout();
@@ -113,7 +112,7 @@
             this.btnPizza2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnPizza2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnPizza2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPizza2.Location = new System.Drawing.Point(113, 41);
+            this.btnPizza2.Location = new System.Drawing.Point(123, 41);
             this.btnPizza2.Name = "btnPizza2";
             this.btnPizza2.Size = new System.Drawing.Size(69, 137);
             this.btnPizza2.TabIndex = 7;
@@ -131,7 +130,7 @@
             this.btnPizza1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnPizza1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPizza1.ForeColor = System.Drawing.Color.Transparent;
-            this.btnPizza1.Location = new System.Drawing.Point(42, 41);
+            this.btnPizza1.Location = new System.Drawing.Point(52, 41);
             this.btnPizza1.Name = "btnPizza1";
             this.btnPizza1.Size = new System.Drawing.Size(65, 137);
             this.btnPizza1.TabIndex = 6;
@@ -142,7 +141,7 @@
             // 
             this.lblTituloPizza.AutoSize = true;
             this.lblTituloPizza.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloPizza.Location = new System.Drawing.Point(8, 10);
+            this.lblTituloPizza.Location = new System.Drawing.Point(18, 10);
             this.lblTituloPizza.Name = "lblTituloPizza";
             this.lblTituloPizza.Size = new System.Drawing.Size(73, 21);
             this.lblTituloPizza.TabIndex = 8;
@@ -152,7 +151,7 @@
             // 
             this.lblTituloBebida.AutoSize = true;
             this.lblTituloBebida.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloBebida.Location = new System.Drawing.Point(8, 265);
+            this.lblTituloBebida.Location = new System.Drawing.Point(18, 265);
             this.lblTituloBebida.Name = "lblTituloBebida";
             this.lblTituloBebida.Size = new System.Drawing.Size(91, 21);
             this.lblTituloBebida.TabIndex = 9;
@@ -180,7 +179,7 @@
             this.lstBebidas.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstBebidas.FormattingEnabled = true;
             this.lstBebidas.ItemHeight = 17;
-            this.lstBebidas.Location = new System.Drawing.Point(12, 289);
+            this.lstBebidas.Location = new System.Drawing.Point(22, 289);
             this.lstBebidas.Name = "lstBebidas";
             this.lstBebidas.Size = new System.Drawing.Size(196, 68);
             this.lstBebidas.TabIndex = 12;
@@ -196,7 +195,7 @@
             this.btnAdicionarBebida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdicionarBebida.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdicionarBebida.ForeColor = System.Drawing.Color.White;
-            this.btnAdicionarBebida.Location = new System.Drawing.Point(12, 365);
+            this.btnAdicionarBebida.Location = new System.Drawing.Point(22, 365);
             this.btnAdicionarBebida.Name = "btnAdicionarBebida";
             this.btnAdicionarBebida.Size = new System.Drawing.Size(196, 23);
             this.btnAdicionarBebida.TabIndex = 13;
@@ -225,7 +224,6 @@
             // 
             // pnlPedido
             // 
-            this.pnlPedido.Controls.Add(this.button1);
             this.pnlPedido.Controls.Add(this.btnFinalizarPedido);
             this.pnlPedido.Controls.Add(this.btnRemoverItemComanda);
             this.pnlPedido.Controls.Add(this.btnLimparListaComanda);
@@ -243,7 +241,7 @@
             this.pnlPedido.Controls.Add(this.btnPizza1);
             this.pnlPedido.Location = new System.Drawing.Point(149, 4);
             this.pnlPedido.Name = "pnlPedido";
-            this.pnlPedido.Size = new System.Drawing.Size(456, 412);
+            this.pnlPedido.Size = new System.Drawing.Size(482, 412);
             this.pnlPedido.TabIndex = 17;
             this.pnlPedido.Visible = false;
             // 
@@ -258,7 +256,7 @@
             this.btnFinalizarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFinalizarPedido.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinalizarPedido.ForeColor = System.Drawing.Color.White;
-            this.btnFinalizarPedido.Location = new System.Drawing.Point(230, 352);
+            this.btnFinalizarPedido.Location = new System.Drawing.Point(246, 352);
             this.btnFinalizarPedido.Name = "btnFinalizarPedido";
             this.btnFinalizarPedido.Size = new System.Drawing.Size(207, 36);
             this.btnFinalizarPedido.TabIndex = 25;
@@ -277,7 +275,7 @@
             this.btnRemoverItemComanda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoverItemComanda.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoverItemComanda.ForeColor = System.Drawing.Color.White;
-            this.btnRemoverItemComanda.Location = new System.Drawing.Point(334, 315);
+            this.btnRemoverItemComanda.Location = new System.Drawing.Point(350, 315);
             this.btnRemoverItemComanda.Name = "btnRemoverItemComanda";
             this.btnRemoverItemComanda.Size = new System.Drawing.Size(103, 36);
             this.btnRemoverItemComanda.TabIndex = 24;
@@ -296,7 +294,7 @@
             this.btnLimparListaComanda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimparListaComanda.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimparListaComanda.ForeColor = System.Drawing.Color.Maroon;
-            this.btnLimparListaComanda.Location = new System.Drawing.Point(230, 315);
+            this.btnLimparListaComanda.Location = new System.Drawing.Point(246, 315);
             this.btnLimparListaComanda.Name = "btnLimparListaComanda";
             this.btnLimparListaComanda.Size = new System.Drawing.Size(103, 36);
             this.btnLimparListaComanda.TabIndex = 23;
@@ -308,7 +306,7 @@
             // 
             this.lblEscolhaPizza2.AutoSize = true;
             this.lblEscolhaPizza2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEscolhaPizza2.Location = new System.Drawing.Point(46, 203);
+            this.lblEscolhaPizza2.Location = new System.Drawing.Point(56, 203);
             this.lblEscolhaPizza2.Name = "lblEscolhaPizza2";
             this.lblEscolhaPizza2.Size = new System.Drawing.Size(0, 16);
             this.lblEscolhaPizza2.TabIndex = 17;
@@ -318,7 +316,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(9, 203);
+            this.label7.Location = new System.Drawing.Point(19, 203);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 16);
             this.label7.TabIndex = 21;
@@ -328,7 +326,7 @@
             // 
             this.lblEscolhaPizza1.AutoSize = true;
             this.lblEscolhaPizza1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEscolhaPizza1.Location = new System.Drawing.Point(46, 186);
+            this.lblEscolhaPizza1.Location = new System.Drawing.Point(56, 186);
             this.lblEscolhaPizza1.Name = "lblEscolhaPizza1";
             this.lblEscolhaPizza1.Size = new System.Drawing.Size(0, 16);
             this.lblEscolhaPizza1.TabIndex = 15;
@@ -338,7 +336,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(9, 186);
+            this.label6.Location = new System.Drawing.Point(19, 186);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(42, 16);
             this.label6.TabIndex = 20;
@@ -348,7 +346,7 @@
             // 
             this.groupBox1.Controls.Add(this.lstPedido);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(230, 10);
+            this.groupBox1.Location = new System.Drawing.Point(246, 10);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(207, 304);
             this.groupBox1.TabIndex = 19;
@@ -377,7 +375,7 @@
             this.btnAdicionarPizza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdicionarPizza.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdicionarPizza.ForeColor = System.Drawing.Color.White;
-            this.btnAdicionarPizza.Location = new System.Drawing.Point(12, 223);
+            this.btnAdicionarPizza.Location = new System.Drawing.Point(22, 223);
             this.btnAdicionarPizza.Name = "btnAdicionarPizza";
             this.btnAdicionarPizza.Size = new System.Drawing.Size(196, 24);
             this.btnAdicionarPizza.TabIndex = 18;
@@ -427,7 +425,7 @@
             this.pnlCliente.Controls.Add(this.lblTelefone1);
             this.pnlCliente.Controls.Add(this.lblNomeCliente);
             this.pnlCliente.Controls.Add(this.lblDadosCliente);
-            this.pnlCliente.Location = new System.Drawing.Point(8, 103);
+            this.pnlCliente.Location = new System.Drawing.Point(8, 95);
             this.pnlCliente.Name = "pnlCliente";
             this.pnlCliente.Size = new System.Drawing.Size(140, 300);
             this.pnlCliente.TabIndex = 22;
@@ -465,12 +463,13 @@
             // txtTelefone
             // 
             this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtTelefone.Location = new System.Drawing.Point(16, 49);
+            this.txtTelefone.Location = new System.Drawing.Point(18, 49);
             this.txtTelefone.Mask = "(00) 000000009";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.PromptChar = ' ';
-            this.txtTelefone.Size = new System.Drawing.Size(101, 13);
+            this.txtTelefone.Size = new System.Drawing.Size(101, 14);
             this.txtTelefone.TabIndex = 18;
             this.txtTelefone.Text = "1132254444";
             this.txtTelefone.TextChanged += new System.EventHandler(this.txtTelefone_TextChanged);
@@ -478,9 +477,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Maroon;
-            this.panel1.Location = new System.Drawing.Point(14, 65);
+            this.panel1.Location = new System.Drawing.Point(15, 67);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(80, 1);
+            this.panel1.Size = new System.Drawing.Size(93, 1);
             this.panel1.TabIndex = 23;
             // 
             // btnPesquisarTelefone
@@ -492,7 +491,7 @@
             this.btnPesquisarTelefone.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnPesquisarTelefone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesquisarTelefone.Image = global::NovaAlianca.Properties.Resources.loupe;
-            this.btnPesquisarTelefone.Location = new System.Drawing.Point(96, 43);
+            this.btnPesquisarTelefone.Location = new System.Drawing.Point(111, 45);
             this.btnPesquisarTelefone.Name = "btnPesquisarTelefone";
             this.btnPesquisarTelefone.Size = new System.Drawing.Size(30, 25);
             this.btnPesquisarTelefone.TabIndex = 1;
@@ -518,19 +517,10 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Maroon;
-            this.panel3.Location = new System.Drawing.Point(146, 15);
+            this.panel3.Location = new System.Drawing.Point(149, 15);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(2, 385);
             this.panel3.TabIndex = 24;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(21, 45);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(187, 133);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // RealizarPedido
             // 
@@ -594,6 +584,5 @@
         private System.Windows.Forms.Button btnPesquisarTelefone;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button1;
     }
 }

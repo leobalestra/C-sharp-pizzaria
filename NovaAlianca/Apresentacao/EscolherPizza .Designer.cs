@@ -82,7 +82,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(225, 33);
             this.button1.TabIndex = 1;
-            this.button1.Text = "OK";
+            this.button1.Text = "Adicionar o sabor";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

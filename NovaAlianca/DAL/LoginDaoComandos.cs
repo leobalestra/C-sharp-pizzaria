@@ -40,6 +40,8 @@ namespace NovaAlianca.DAL
             return conexao;
         }
 
+        #region Pedido
+
         internal List<string> CarregarPizzasEntregues()
         {
             Conexao con = new Conexao();
@@ -47,7 +49,7 @@ namespace NovaAlianca.DAL
             SqlDataReader dr;
             List<string> pizzas = new List<string>();
 
-            cmd.CommandText = "SELECT convert(varchar, p.dta_pedido, 8)+' - '+cast(c.nme_cliente as varchar)+' - '+cast(c.nmr_telefone1 as varchar)+' - ('+cast(p.id_pedido as varchar)+')' FROM tblPedido p INNER JOIN tblCliente c ON c.id_cliente = p.id_cliente WHERE p.sta_pedido IN ( 'D', 'C' ) order by 1 desc";
+            cmd.CommandText = "SELECT top (6) case when p.sta_pedido = 'C' then 'Cancelado' else 'Despachado' end+' ás '+convert(varchar, p.dta_despacho, 8)+' | '+cast(c.nme_cliente as varchar)+' | Tel.: '+cast(c.nmr_telefone1 as varchar)+' - (cód. '+cast(p.id_pedido as varchar)+')' FROM tblPedido p INNER JOIN tblCliente c ON c.id_cliente = p.id_cliente WHERE p.sta_pedido IN ( 'D', 'C' ) order by dta_despacho desc";
             cmd.Connection = con.Conectar();
             dr = cmd.ExecuteReader();
 
@@ -65,7 +67,7 @@ namespace NovaAlianca.DAL
             SqlDataReader dr;
             List<string> pizzas = new List<string>();
 
-            cmd.CommandText = "SELECT convert(varchar, p.dta_pedido, 8)+' - '+cast(c.nme_cliente as varchar)+' - '+cast(c.nmr_telefone1 as varchar)+' - ('+cast(p.id_pedido as varchar)+')' FROM tblPedido p INNER JOIN tblCliente c ON c.id_cliente = p.id_cliente WHERE p.sta_pedido = 'E' order by 1 desc";
+            cmd.CommandText = "SELECT convert(varchar, p.dta_pedido, 8)+' | '+cast(c.nme_cliente as varchar)+' | Tel.: '+cast(c.nmr_telefone1 as varchar)+' - (cód. '+cast(p.id_pedido as varchar)+')' FROM tblPedido p INNER JOIN tblCliente c ON c.id_cliente = p.id_cliente WHERE p.sta_pedido = 'E' order by 1 desc";
             cmd.Connection = con.Conectar();
             dr = cmd.ExecuteReader();
 
@@ -98,6 +100,18 @@ namespace NovaAlianca.DAL
                 this.mensagem = ex.ToString();
             }
             return qtd;
+        }
+
+        internal bool CancelarPedido(int cdgPedido)
+        {
+            Conexao con = new Conexao();
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "UPDATE tblPedido set dta_despacho = getdate(), sta_pedido = 'C' where id_pedido = @idpedido";
+            cmd.Parameters.AddWithValue("@idpedido", cdgPedido);
+            cmd.Connection = con.Conectar();
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
+            return true;
         }
 
         internal bool FinalizarPedido(int cdgPedido)
@@ -254,5 +268,287 @@ namespace NovaAlianca.DAL
 
             return produto;
         }
+
+        #endregion
+
+        #region Profissonal
+
+        internal bool EditarProfissional(decimal id, string login, string nome, string funcao, string loginAlt, string senha, char situacao)
+        {
+            char funcaoChar;
+
+            Conexao con = new Conexao();
+            SqlCommand cmd = new SqlCommand();
+
+            if (funcao == "Admin")
+                funcaoChar = 'A';
+            else if (funcao == "Atendente")
+                funcaoChar = 'T';
+            else if (funcao == "Gerente")
+                funcaoChar = 'G';
+            else if (funcao == "Pizzaiolo")
+                funcaoChar = 'P';
+            else
+                funcaoChar = 'E';
+
+            cmd.CommandText = "UPDATE tblFuncionario set sta_funcionario = @situacao, dsc_login = @login, mme_funcionario = @profissional, tpo_funcao = @funcao, dta_alteracao = getdate(), dsc_login_alterou = @loginAlt, dsc_senha = @senha where id_funcionario = @idprofissional";
+            cmd.Parameters.AddWithValue("@login", login);
+            cmd.Parameters.AddWithValue("@profissional", nome);
+            cmd.Parameters.AddWithValue("@funcao", funcaoChar);
+            cmd.Parameters.AddWithValue("@idprofissional", id);
+            cmd.Parameters.AddWithValue("@loginAlt", loginAlt.ToUpper());
+            cmd.Parameters.AddWithValue("@senha", senha);
+            cmd.Parameters.AddWithValue("@situacao", situacao);
+            cmd.Connection = con.Conectar();
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
+            return true;
+        }
+
+        internal bool InativarProfissional(int id, string loginalt)
+        {
+            Conexao con = new Conexao();
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "UPDATE tblFuncionario set sta_funcionario = 'I', dta_alteracao = getdate(), dsc_login_alterou = @loginAlt where id_funcionario = @idprofissional";
+            cmd.Parameters.AddWithValue("@idprofissional", id);
+            cmd.Connection = con.Conectar();
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
+            return true;
+        }
+
+        internal bool CriarProfissional(string login, string nome, string funcao, string loginAtual, string senha, char situacao)
+        {
+            Conexao con = new Conexao();
+            SqlCommand cmd = new SqlCommand();
+            
+            char funcaoChar;
+            if (funcao == "Admin")
+                funcaoChar = 'A';
+            else if (funcao == "Atendente")
+                funcaoChar = 'T';
+            else if (funcao == "Gerente")
+                funcaoChar = 'G';
+            else if (funcao == "Pizzaiolo")
+                funcaoChar = 'P';
+            else
+                funcaoChar = 'E';
+
+            cmd.CommandText = "INSERT INTO tblFuncionario VALUES (@login, @nome, @funcao, getdate(), @logincad, @senha, null, null, @situacao);";
+            cmd.Parameters.AddWithValue("@login", login);
+            cmd.Parameters.AddWithValue("@nome", nome);
+            cmd.Parameters.AddWithValue("@funcao", funcaoChar);
+            cmd.Parameters.AddWithValue("@senha", senha);
+            cmd.Parameters.AddWithValue("@situacao", situacao);
+            cmd.Parameters.AddWithValue("@logincad", loginAtual.ToUpper());
+            cmd.Connection = con.Conectar();
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
+            return true;
+        }
+
+        internal int IdLogin(string login)
+        {
+            SqlCommand cmd = new SqlCommand();
+            Conexao con = new Conexao();
+            SqlDataReader dr;
+
+            int id = 0;
+            cmd.CommandText = "SELECT id_funcionario FROM tblFuncionario WHERE dsc_login = @login";
+            cmd.Parameters.AddWithValue("@login", login);
+            try
+            {
+                cmd.Connection = con.Conectar();
+                dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    dr.Read();
+                    id = Convert.ToInt32(dr[0]);
+                }
+            }
+            catch (Exception ex)
+            {
+                this.mensagem = ex.ToString();
+            }
+
+            return id;
+        }
+
+        #endregion
+
+        #region Cliente
+
+        internal bool EditarCliente(int id, string nome, long telefone1, long? telefone2, string cep, int numero, string endereco, string loginAtual)
+        {
+            Conexao con = new Conexao();
+            SqlCommand cmd = new SqlCommand();
+            if (telefone2 != null)
+            {
+                cmd.CommandText = "UPDATE tblCliente SET nme_cliente = @nomecliente, nmr_telefone1 = @telefone1, nmr_telefone2 = @telefone2, nmr_cep = @cep, dsc_rua = @endereco, nmr_endereco = @numero, dta_cadastro = getdate(), dsc_login_cadastro = @loginAlt where id_cliente = @id";
+                cmd.Parameters.AddWithValue("@telefone2", telefone2);
+            }
+                
+            else
+                cmd.CommandText = "UPDATE tblCliente SET nme_cliente = @nomecliente, nmr_telefone1 = @telefone1, nmr_telefone2 = null, nmr_cep = @cep, dsc_rua = @endereco, nmr_endereco = @numero, dta_cadastro = getdate(), dsc_login_cadastro = @loginAlt where id_cliente = @id";
+
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@nomecliente", nome);
+            cmd.Parameters.AddWithValue("@telefone1", telefone1);
+            cmd.Parameters.AddWithValue("@cep", cep);
+            cmd.Parameters.AddWithValue("@numero", numero);
+            cmd.Parameters.AddWithValue("@endereco", endereco);
+            cmd.Parameters.AddWithValue("@loginAlt", loginAtual.ToUpper());
+            cmd.Connection = con.Conectar();
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
+            return true;
+        }
+
+        internal bool CriarCliente(int id, string nome, long telefone1, long? telefone2, string cep, int numero, string endereco, string loginAtual)
+        {
+            Conexao con = new Conexao();
+            SqlCommand cmd = new SqlCommand();
+            if(telefone2 != null)
+            {
+                cmd.CommandText = "INSERT INTO tblCliente VALUES (@nomecliente, @telefone1, @telefone2, @cep, @endereco, @numero, getdate(), @loginAlt)";
+                cmd.Parameters.AddWithValue("@telefone2", telefone2);
+            }
+            else
+                cmd.CommandText = "INSERT INTO tblCliente (nme_cliente, nmr_telefone1, nmr_cep, dsc_rua, nmr_endereco, dta_cadastro, dsc_login_cadastro) VALUES (@nomecliente, @telefone1, @cep, @endereco, @numero, getdate(), @loginAlt)";
+            
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@nomecliente", nome);
+            cmd.Parameters.AddWithValue("@telefone1", telefone1);            
+            cmd.Parameters.AddWithValue("@cep", cep);
+            cmd.Parameters.AddWithValue("@numero", numero);
+            cmd.Parameters.AddWithValue("@endereco", endereco);
+            cmd.Parameters.AddWithValue("@loginAlt", loginAtual.ToUpper());
+            cmd.Connection = con.Conectar();
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
+            return true;
+        }
+
+        internal bool ExcluirCliente(int id)
+        {
+            Conexao con = new Conexao();
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "DELETE FROM tblCliente WHERE id_cliente = @id";
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Connection = con.Conectar();
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
+            return true;
+        }
+
+        internal bool VerificarClientePedido(int id)
+        {
+            SqlCommand cmd = new SqlCommand();
+            Conexao con = new Conexao();
+            SqlDataReader dr;
+
+            int qtd = 0;
+            cmd.CommandText = "select COUNT(*) qtd from tblPedido where id_cliente = @id";
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Connection = con.Conectar();
+            try
+            {
+                cmd.Connection = con.Conectar();
+                dr = cmd.ExecuteReader();
+                dr.Read();
+                if (Convert.ToInt32(dr[0]) > 0)
+                    qtd = Convert.ToInt32(dr[0]);
+            }
+            catch (Exception ex)
+            {
+                this.mensagem = ex.ToString();
+            }
+            return (qtd == 0 ? false : true);
+        }
+
+        internal int VerificarTelefone(long tel1, long? tel2)
+        {
+            SqlCommand cmd = new SqlCommand();
+            Conexao con = new Conexao();
+            SqlDataReader dr;
+
+            int id = 0;
+            if(tel2 == null)
+                cmd.CommandText = "SELECT id_cliente FROM tblCliente  where nmr_telefone1 = @telefone1";
+            else
+            {
+                cmd.CommandText = "SELECT id_cliente FROM tblCliente  where ( nmr_telefone1 = @telefone1 OR nmr_telefone2 = @telefone2 )";
+                cmd.Parameters.AddWithValue("@telefone2", tel2);
+            }
+            cmd.Parameters.AddWithValue("@telefone1", tel1);
+            cmd.Connection = con.Conectar();
+            try
+            {
+                cmd.Connection = con.Conectar();
+                dr = cmd.ExecuteReader();
+                dr.Read();
+                if (Convert.ToInt32(dr[0]) > 0)
+                    id = Convert.ToInt32(dr[0]);
+            }
+            catch (Exception ex)
+            {
+                this.mensagem = ex.ToString();
+            }
+            return id;
+        }
+
+
+        #endregion
+
+        #region Produtos
+
+        internal bool EditarProduto(decimal id, string nome, decimal valor, char tipo, char situacao)
+        {
+            Conexao con = new Conexao();
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "UPDATE tblProduto set tpo_produto = @tipo, dsc_produto = @nome, vlr_produto = @valor, sta_produto = @situacao where id_produto = @id";
+            cmd.Parameters.AddWithValue("@tipo", tipo);
+            cmd.Parameters.AddWithValue("@nome", nome);
+            cmd.Parameters.AddWithValue("@valor", valor);
+            cmd.Parameters.AddWithValue("@situacao", situacao);
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Connection = con.Conectar();
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
+            return true;
+        }
+
+        internal bool CriarProduto(decimal id, string nome, decimal valor, char tipo, char situacao)
+        {
+            Conexao con = new Conexao();
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "INSERT INTO tblProduto VALUES (@tipo, @nome, @valor, @situacao)";
+            cmd.Parameters.AddWithValue("@tipo", tipo);
+            cmd.Parameters.AddWithValue("@nome", nome);
+            cmd.Parameters.AddWithValue("@valor", valor);
+            cmd.Parameters.AddWithValue("@situacao", situacao);
+            cmd.Connection = con.Conectar();
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
+            return true;
+        }
+
+        internal bool InativarProduto(int id)
+        {
+            Conexao con = new Conexao();
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "UPDATE tblProduto SET sta_produto = 'F' where id_produto = @id";
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Connection = con.Conectar();
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
+            return true;
+        }
+
+        #endregion
+
     }
 }

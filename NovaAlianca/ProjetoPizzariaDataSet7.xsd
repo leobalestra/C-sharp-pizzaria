@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ProjetoPizzariaDataSet7" targetNamespace="http://tempuri.org/ProjetoPizzariaDataSet7.xsd" xmlns:mstns="http://tempuri.org/ProjetoPizzariaDataSet7.xsd" xmlns="http://tempuri.org/ProjetoPizzariaDataSet7.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ProjetoPizzariaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ProjetoPizzariaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.NovaAlianca.Properties.Settings.GlobalReference.Default.ProjetoPizzariaConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblFuncionarioTableAdapter" GeneratorDataComponentClassName="tblFuncionarioTableAdapter" Name="tblFuncionario" UserDataComponentName="tblFuncionarioTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ProjetoPizzariaConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select id_funcionario, dsc_login, mme_funcionario, c.dsc_funcao, convert(varchar, dta_cadastro, 3) dsc_login_cadastro, convert(varchar, dta_alteracao, 3) dta_alteraco, dsc_login_alterou, case when sta_funcionario = 'A' then 'Ativo' else 'Inativo' end situacao from tblFuncionario f inner join tblFuncaoFuncionario c on c.tpo_funcao = f.tpo_funcao</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_funcionario" DataSetColumn="id_funcionario" />
+              <Mapping SourceColumn="dsc_login" DataSetColumn="dsc_login" />
+              <Mapping SourceColumn="mme_funcionario" DataSetColumn="mme_funcionario" />
+              <Mapping SourceColumn="dsc_login_cadastro" DataSetColumn="dsc_login_cadastro" />
+              <Mapping SourceColumn="dsc_login_alterou" DataSetColumn="dsc_login_alterou" />
+              <Mapping SourceColumn="dsc_funcao" DataSetColumn="dsc_funcao" />
+              <Mapping SourceColumn="dta_alteraco" DataSetColumn="dta_alteraco" />
+              <Mapping SourceColumn="situacao" DataSetColumn="situacao" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ProjetoPizzariaDataSet7" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ProjetoPizzariaDataSet7" msprop:Generator_UserDSName="ProjetoPizzariaDataSet7">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tblFuncionario" msprop:Generator_TableClassName="tblFuncionarioDataTable" msprop:Generator_TableVarName="tabletblFuncionario" msprop:Generator_RowChangedName="tblFuncionarioRowChanged" msprop:Generator_TablePropName="tblFuncionario" msprop:Generator_RowDeletingName="tblFuncionarioRowDeleting" msprop:Generator_RowChangingName="tblFuncionarioRowChanging" msprop:Generator_RowEvHandlerName="tblFuncionarioRowChangeEventHandler" msprop:Generator_RowDeletedName="tblFuncionarioRowDeleted" msprop:Generator_RowClassName="tblFuncionarioRow" msprop:Generator_UserTableName="tblFuncionario" msprop:Generator_RowEvArgName="tblFuncionarioRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_funcionario" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_funcionario" msprop:Generator_ColumnPropNameInRow="id_funcionario" msprop:Generator_ColumnPropNameInTable="id_funcionarioColumn" msprop:Generator_UserColumnName="id_funcionario" type="xs:int" />
+              <xs:element name="dsc_login" msprop:Generator_ColumnVarNameInTable="columndsc_login" msprop:Generator_ColumnPropNameInRow="dsc_login" msprop:Generator_ColumnPropNameInTable="dsc_loginColumn" msprop:Generator_UserColumnName="dsc_login">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="mme_funcionario" msprop:Generator_ColumnVarNameInTable="columnmme_funcionario" msprop:Generator_ColumnPropNameInRow="mme_funcionario" msprop:Generator_ColumnPropNameInTable="mme_funcionarioColumn" msprop:Generator_UserColumnName="mme_funcionario">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dsc_login_cadastro" msprop:Generator_ColumnVarNameInTable="columndsc_login_cadastro" msprop:Generator_ColumnPropNameInRow="dsc_login_cadastro" msprop:Generator_ColumnPropNameInTable="dsc_login_cadastroColumn" msprop:Generator_UserColumnName="dsc_login_cadastro" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dsc_login_alterou" msprop:Generator_ColumnVarNameInTable="columndsc_login_alterou" msprop:Generator_ColumnPropNameInRow="dsc_login_alterou" msprop:Generator_ColumnPropNameInTable="dsc_login_alterouColumn" msprop:Generator_UserColumnName="dsc_login_alterou" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dsc_funcao" msprop:Generator_ColumnVarNameInTable="columndsc_funcao" msprop:Generator_ColumnPropNameInRow="dsc_funcao" msprop:Generator_ColumnPropNameInTable="dsc_funcaoColumn" msprop:Generator_UserColumnName="dsc_funcao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dta_alteraco" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndta_alteraco" msprop:Generator_ColumnPropNameInRow="dta_alteraco" msprop:Generator_ColumnPropNameInTable="dta_alteracoColumn" msprop:Generator_UserColumnName="dta_alteraco" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="situacao" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsituacao" msprop:Generator_ColumnPropNameInRow="situacao" msprop:Generator_ColumnPropNameInTable="situacaoColumn" msprop:Generator_UserColumnName="situacao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tblFuncionario" />
+      <xs:field xpath="mstns:id_funcionario" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

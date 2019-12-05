@@ -115,7 +115,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 36);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(196, 414);
+            this.panel2.Size = new System.Drawing.Size(173, 414);
             this.panel2.TabIndex = 1;
             // 
             // lblUser
@@ -124,7 +124,7 @@
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Century Gothic", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser.ForeColor = System.Drawing.Color.LightCoral;
-            this.lblUser.Location = new System.Drawing.Point(31, 123);
+            this.lblUser.Location = new System.Drawing.Point(16, 134);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(88, 12);
             this.lblUser.TabIndex = 7;
@@ -145,6 +145,7 @@
             this.btnLogout.Text = "   Logout";
             this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnCadastrarFuncionario
             // 
@@ -156,9 +157,9 @@
             this.btnCadastrarFuncionario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCadastrarFuncionario.Location = new System.Drawing.Point(0, 325);
             this.btnCadastrarFuncionario.Name = "btnCadastrarFuncionario";
-            this.btnCadastrarFuncionario.Size = new System.Drawing.Size(196, 43);
+            this.btnCadastrarFuncionario.Size = new System.Drawing.Size(173, 43);
             this.btnCadastrarFuncionario.TabIndex = 5;
-            this.btnCadastrarFuncionario.Text = "   Cadastrar Funcionário";
+            this.btnCadastrarFuncionario.Text = "   Funcionários";
             this.btnCadastrarFuncionario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCadastrarFuncionario.UseVisualStyleBackColor = true;
             this.btnCadastrarFuncionario.Click += new System.EventHandler(this.btnCadastrarFuncionario_Click);
@@ -173,9 +174,9 @@
             this.btnCadastrarProduto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCadastrarProduto.Location = new System.Drawing.Point(0, 281);
             this.btnCadastrarProduto.Name = "btnCadastrarProduto";
-            this.btnCadastrarProduto.Size = new System.Drawing.Size(196, 43);
+            this.btnCadastrarProduto.Size = new System.Drawing.Size(173, 43);
             this.btnCadastrarProduto.TabIndex = 4;
-            this.btnCadastrarProduto.Text = "   Cadastrar Produto";
+            this.btnCadastrarProduto.Text = "   Produtos";
             this.btnCadastrarProduto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCadastrarProduto.UseVisualStyleBackColor = true;
             this.btnCadastrarProduto.Click += new System.EventHandler(this.btnCadastrarProduto_Click);
@@ -190,7 +191,7 @@
             this.btnRelatorios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRelatorios.Location = new System.Drawing.Point(0, 237);
             this.btnRelatorios.Name = "btnRelatorios";
-            this.btnRelatorios.Size = new System.Drawing.Size(196, 43);
+            this.btnRelatorios.Size = new System.Drawing.Size(173, 43);
             this.btnRelatorios.TabIndex = 3;
             this.btnRelatorios.Text = "   Relatórios";
             this.btnRelatorios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -207,9 +208,9 @@
             this.btnCadastrarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCadastrarCliente.Location = new System.Drawing.Point(0, 193);
             this.btnCadastrarCliente.Name = "btnCadastrarCliente";
-            this.btnCadastrarCliente.Size = new System.Drawing.Size(196, 43);
+            this.btnCadastrarCliente.Size = new System.Drawing.Size(173, 43);
             this.btnCadastrarCliente.TabIndex = 2;
-            this.btnCadastrarCliente.Text = "   Cadastrar Cliente";
+            this.btnCadastrarCliente.Text = "   Clientes";
             this.btnCadastrarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCadastrarCliente.UseVisualStyleBackColor = true;
             this.btnCadastrarCliente.Click += new System.EventHandler(this.btnCadastrarCliente_Click);
@@ -224,7 +225,7 @@
             this.btnRealizarPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRealizarPedido.Location = new System.Drawing.Point(0, 149);
             this.btnRealizarPedido.Name = "btnRealizarPedido";
-            this.btnRealizarPedido.Size = new System.Drawing.Size(196, 43);
+            this.btnRealizarPedido.Size = new System.Drawing.Size(173, 43);
             this.btnRealizarPedido.TabIndex = 1;
             this.btnRealizarPedido.Text = "   Realizar Pedido";
             this.btnRealizarPedido.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -238,7 +239,7 @@
             this.pictureBox1.Image = global::NovaAlianca.Properties.Resources.Imagem1;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(196, 135);
+            this.pictureBox1.Size = new System.Drawing.Size(173, 123);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -248,9 +249,9 @@
             // 
             this.pnlTelas.BackColor = System.Drawing.Color.White;
             this.pnlTelas.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlTelas.Location = new System.Drawing.Point(196, 36);
+            this.pnlTelas.Location = new System.Drawing.Point(173, 36);
             this.pnlTelas.Name = "pnlTelas";
-            this.pnlTelas.Size = new System.Drawing.Size(604, 414);
+            this.pnlTelas.Size = new System.Drawing.Size(627, 414);
             this.pnlTelas.TabIndex = 2;
             // 
             // toolStripTextBox1

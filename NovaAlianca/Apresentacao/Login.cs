@@ -90,5 +90,23 @@ namespace NovaAlianca
             }
         }
         #endregion
+
+        private void txtLogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Keys)e.KeyChar == Keys.Enter)
+
+            {
+                txtSenha.Focus();
+            }
+        }
+
+        private void txtSenha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Keys)e.KeyChar == Keys.Enter)
+
+            {
+                btnConectar.PerformClick();
+            }
+        }
     }
 }

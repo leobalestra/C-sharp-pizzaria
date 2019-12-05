@@ -29,14 +29,19 @@ namespace NovaAlianca.Apresentacao
             txtTelefone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             var cliente = controle.PesquisaCliente(Convert.ToInt64(txtTelefone.Text));
 
-            _idCliente = Convert.ToInt32(cliente[0]);
-            lblNomeCliente.Text = cliente[1].ToString();
-            lblTelefone1.Text = cliente[2].ToString();
-            lblTelefone2.Text = cliente[3].ToString();
-            lblEndereco.Text = cliente[5].ToString()+ "\r\nNº " + cliente[6].ToString()+ "\r\n" + cliente[4].ToString();
-            lblUltimoPedido.Text = cliente[7].ToString();
-            pnlPedido.Visible = true;
-            pnlCliente.Visible = true;
+            if(cliente.Count > 0)
+            {
+                _idCliente = Convert.ToInt32(cliente[0]);
+                lblNomeCliente.Text = cliente[1].ToString();
+                lblTelefone1.Text = cliente[2].ToString();
+                lblTelefone2.Text = cliente[3].ToString();
+                lblEndereco.Text = cliente[5].ToString() + "\r\nNº " + cliente[6].ToString() + "\r\n" + cliente[4].ToString();
+                lblUltimoPedido.Text = cliente[7].ToString();
+                pnlPedido.Visible = true;
+                pnlCliente.Visible = true;
+            }
+            else
+                MessageBox.Show("Cliente não existe!");
         }
 
         private void RealizarPedido_Load(object sender, EventArgs e)
