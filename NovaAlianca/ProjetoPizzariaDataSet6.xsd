@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ProjetoPizzariaDataSet6" targetNamespace="http://tempuri.org/ProjetoPizzariaDataSet6.xsd" xmlns:mstns="http://tempuri.org/ProjetoPizzariaDataSet6.xsd" xmlns="http://tempuri.org/ProjetoPizzariaDataSet6.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ProjetoPizzariaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ProjetoPizzariaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.NovaAlianca.Properties.Settings.GlobalReference.Default.ProjetoPizzariaConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblClienteTableAdapter" GeneratorDataComponentClassName="tblClienteTableAdapter" Name="tblCliente" UserDataComponentName="tblClienteTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ProjetoPizzariaConnectionString (Settings)" DbObjectName="ProjetoPizzaria.dbo.tblPedido" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        p.sta_pedido, CASE WHEN sta_pedido = 'E' THEN 'Em andamento' WHEN sta_pedido = 'C' THEN 'Cancelado' ELSE 'Entregue' END AS desc_sta_pedido, CONVERT(varchar, p.dta_pedido, 3) AS data, 
+                         SUBSTRING(CONVERT(varchar, p.dta_pedido, 8), 1, 2) AS hora, p.tpo_pagamento, 
+                         CASE WHEN p.tpo_pagamento = 'D' THEN 'Débito' WHEN p.tpo_pagamento = 'C' THEN 'Crédito' WHEN p.tpo_pagamento = 'R' THEN 'Dinheiro' WHEN p.tpo_pagamento = 'V' THEN 'Vale Refeição' END AS desc_tpo_pagamento, 
+                         COUNT(DISTINCT p.id_pedido) AS qtd, SUM(r.vlr_produto) AS soma
+FROM            tblPedido AS p INNER JOIN
+                         tblComanda AS c ON c.id_comanda = p.id_comanda INNER JOIN
+                         tblProduto AS r ON r.id_produto = c.id_produto
+WHERE        (p.dta_pedido &gt; CAST(GETDATE() AS date))
+GROUP BY p.sta_pedido, CONVERT(varchar, p.dta_pedido, 3), SUBSTRING(CONVERT(varchar, p.dta_pedido, 8), 1, 2), p.tpo_pagamento, 
+                         CASE WHEN sta_pedido = 'E' THEN 'Em andamento' WHEN sta_pedido = 'C' THEN 'Cancelado' ELSE 'Entregue' END, 
+                         CASE WHEN p.tpo_pagamento = 'D' THEN 'Débito' WHEN p.tpo_pagamento = 'C' THEN 'Crédito' WHEN p.tpo_pagamento = 'R' THEN 'Dinheiro' WHEN p.tpo_pagamento = 'V' THEN 'Vale Refeição' END</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="sta_pedido" DataSetColumn="sta_pedido" />
+              <Mapping SourceColumn="desc_sta_pedido" DataSetColumn="desc_sta_pedido" />
+              <Mapping SourceColumn="data" DataSetColumn="data" />
+              <Mapping SourceColumn="hora" DataSetColumn="hora" />
+              <Mapping SourceColumn="tpo_pagamento" DataSetColumn="tpo_pagamento" />
+              <Mapping SourceColumn="desc_tpo_pagamento" DataSetColumn="desc_tpo_pagamento" />
+              <Mapping SourceColumn="qtd" DataSetColumn="qtd" />
+              <Mapping SourceColumn="soma" DataSetColumn="soma" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ProjetoPizzariaDataSet6" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ProjetoPizzariaDataSet6" msprop:Generator_UserDSName="ProjetoPizzariaDataSet6">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tblCliente" msprop:Generator_TableClassName="tblClienteDataTable" msprop:Generator_TableVarName="tabletblCliente" msprop:Generator_RowChangedName="tblClienteRowChanged" msprop:Generator_TablePropName="tblCliente" msprop:Generator_RowDeletingName="tblClienteRowDeleting" msprop:Generator_RowChangingName="tblClienteRowChanging" msprop:Generator_RowEvHandlerName="tblClienteRowChangeEventHandler" msprop:Generator_RowDeletedName="tblClienteRowDeleted" msprop:Generator_RowClassName="tblClienteRow" msprop:Generator_UserTableName="tblCliente" msprop:Generator_RowEvArgName="tblClienteRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="sta_pedido" msprop:Generator_ColumnVarNameInTable="columnsta_pedido" msprop:Generator_ColumnPropNameInRow="sta_pedido" msprop:Generator_ColumnPropNameInTable="sta_pedidoColumn" msprop:Generator_UserColumnName="sta_pedido">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="desc_sta_pedido" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndesc_sta_pedido" msprop:Generator_ColumnPropNameInRow="desc_sta_pedido" msprop:Generator_ColumnPropNameInTable="desc_sta_pedidoColumn" msprop:Generator_UserColumnName="desc_sta_pedido" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="data" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndata" msprop:Generator_ColumnPropNameInRow="data" msprop:Generator_ColumnPropNameInTable="dataColumn" msprop:Generator_UserColumnName="data" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="hora" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnhora" msprop:Generator_ColumnPropNameInRow="hora" msprop:Generator_ColumnPropNameInTable="horaColumn" msprop:Generator_UserColumnName="hora" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tpo_pagamento" msprop:Generator_ColumnVarNameInTable="columntpo_pagamento" msprop:Generator_ColumnPropNameInRow="tpo_pagamento" msprop:Generator_ColumnPropNameInTable="tpo_pagamentoColumn" msprop:Generator_UserColumnName="tpo_pagamento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="desc_tpo_pagamento" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndesc_tpo_pagamento" msprop:Generator_ColumnPropNameInRow="desc_tpo_pagamento" msprop:Generator_ColumnPropNameInTable="desc_tpo_pagamentoColumn" msprop:Generator_UserColumnName="desc_tpo_pagamento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="qtd" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnqtd" msprop:Generator_ColumnPropNameInRow="qtd" msprop:Generator_ColumnPropNameInTable="qtdColumn" msprop:Generator_UserColumnName="qtd" type="xs:int" minOccurs="0" />
+              <xs:element name="soma" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsoma" msprop:Generator_ColumnPropNameInRow="soma" msprop:Generator_ColumnPropNameInTable="somaColumn" msprop:Generator_UserColumnName="soma" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

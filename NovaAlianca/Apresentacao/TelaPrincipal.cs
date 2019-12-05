@@ -21,7 +21,7 @@ namespace NovaAlianca.Apresentacao
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-            TelaPrincipal.ActiveForm.Close();
+            Application.Exit();
         }
 
         #region ArrastarMouse
@@ -52,7 +52,7 @@ namespace NovaAlianca.Apresentacao
         #endregion
 
         #region BotoesLaterais
-        private void AbrirFormInPanel(object Formfilho)
+        public void AbrirFormInPanel(object Formfilho)
         {
             if (this.pnlTelas.Controls.Count > 0)
                 this.pnlTelas.Controls.RemoveAt(0);
@@ -65,7 +65,7 @@ namespace NovaAlianca.Apresentacao
             fh.Show();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        public void pictureBox1_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new Home());
             btnRealizarPedido.BackColor = Color.FromArgb(171, 15, 16);
@@ -123,6 +123,13 @@ namespace NovaAlianca.Apresentacao
             btnRelatorios.BackColor = Color.FromArgb(171, 15, 16);
             btnCadastrarProduto.BackColor = Color.FromArgb(171, 15, 16);
             btnCadastrarFuncionario.BackColor = Color.FromArgb(102, 0, 0);
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult confirm = MessageBox.Show("Deseja sair do sistema?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (confirm.ToString().ToUpper() == "YES")
+                Application.Exit();
         }
         #endregion
     }

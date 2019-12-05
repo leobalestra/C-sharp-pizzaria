@@ -25,7 +25,7 @@ namespace NovaAlianca
         {
             Controle controle = new Controle();
             controle.Acessar(txtLogin.Text.ToUpper(), txtSenha.Text);
-            if (controle.mensagem.Equals(""))
+            if (controle.mensagemConexao.Equals(""))
             {
                 if (controle.acesso)
                 {
@@ -44,7 +44,7 @@ namespace NovaAlianca
             }
             else
             {
-                MessageBox.Show(controle.mensagem); ;
+                MessageBox.Show(controle.mensagemConexao); ;
             }
         }
 
@@ -90,5 +90,23 @@ namespace NovaAlianca
             }
         }
         #endregion
+
+        private void txtLogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Keys)e.KeyChar == Keys.Enter)
+
+            {
+                txtSenha.Focus();
+            }
+        }
+
+        private void txtSenha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Keys)e.KeyChar == Keys.Enter)
+
+            {
+                btnConectar.PerformClick();
+            }
+        }
     }
 }

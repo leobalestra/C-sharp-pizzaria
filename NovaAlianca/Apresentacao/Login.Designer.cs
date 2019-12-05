@@ -49,12 +49,12 @@
             // 
             this.btnConectar.BackColor = System.Drawing.Color.Maroon;
             this.btnConectar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConectar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConectar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConectar.ForeColor = System.Drawing.Color.White;
             this.btnConectar.Location = new System.Drawing.Point(28, 250);
             this.btnConectar.Name = "btnConectar";
             this.btnConectar.Size = new System.Drawing.Size(200, 24);
-            this.btnConectar.TabIndex = 0;
+            this.btnConectar.TabIndex = 2;
             this.btnConectar.Text = "Conectar";
             this.btnConectar.UseVisualStyleBackColor = false;
             this.btnConectar.Click += new System.EventHandler(this.btnConectar_Click);
@@ -62,15 +62,16 @@
             // txtLogin
             // 
             this.txtLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLogin.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtLogin.Location = new System.Drawing.Point(64, 164);
+            this.txtLogin.Location = new System.Drawing.Point(64, 165);
             this.txtLogin.MaxLength = 30;
             this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(157, 15);
+            this.txtLogin.Size = new System.Drawing.Size(157, 16);
             this.txtLogin.TabIndex = 0;
             this.txtLogin.Text = "lbalestra";
             this.txtLogin.Click += new System.EventHandler(this.txtLogin_Click);
+            this.txtLogin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLogin_KeyPress);
             // 
             // txtSenha
             // 
@@ -82,10 +83,11 @@
             this.txtSenha.MaxLength = 20;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(157, 15);
-            this.txtSenha.TabIndex = 3;
+            this.txtSenha.TabIndex = 1;
             this.txtSenha.Text = "leo074123";
             this.txtSenha.UseSystemPasswordChar = true;
             this.txtSenha.Click += new System.EventHandler(this.txtSenha_Click);
+            this.txtSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSenha_KeyPress);
             // 
             // btnSair
             // 
