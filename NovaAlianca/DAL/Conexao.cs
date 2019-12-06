@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NovaAlianca.Apresentacao;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace NovaAlianca.DAL
 
         public Conexao()
         {
-            con.ConnectionString = @"Data Source= (localdb)\Servidor;Initial Catalog=ProjetoPizzaria;Integrated Security=True";
+            con.ConnectionString = @"Data Source= "+EscolherBancoDados._bancodeDados+";Initial Catalog=ProjetoPizzaria;Integrated Security=True";
         }
 
         public SqlConnection Conectar()

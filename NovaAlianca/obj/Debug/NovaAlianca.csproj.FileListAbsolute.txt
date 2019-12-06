@@ -18,3 +18,9 @@ C:\Users\lbalestra\source\repos\NovaAlianca\NovaAlianca\obj\Debug\NovaAlianca.pd
 C:\Users\lbalestra\source\repos\NovaAlianca\NovaAlianca\obj\Debug\NovaAlianca.csprojAssemblyReference.cache
 C:\Users\lbalestra\source\repos\NovaAlianca\NovaAlianca\obj\Debug\NovaAlianca.Apresentacao.PaginaRelatorio1.resources
 C:\Users\lbalestra\source\repos\NovaAlianca\NovaAlianca\obj\Debug\NovaAlianca.Apresentacao.PaginaRelatorio2.resources
+C:\Users\lbalestra\source\repos\NovaAlianca\NovaAlianca\obj\Debug\NovaAlianca.Apresentacao.EscolherBancoDados.resources
+C:\Users\lbalestra\source\repos\NovaAlianca\NovaAlianca\obj\Debug\NovaAlianca.Apresentacao.PaginaRelatorio3.resources
+C:\Users\lbalestra\source\repos\NovaAlianca\NovaAlianca\obj\Debug\NovaAlianca.Apresentacao.PaginaRelatorio4.resources
+C:\Users\lbalestra\source\repos\NovaAlianca\NovaAlianca\obj\Debug\NovaAlianca.Apresentacao.PaginaRelatorio5.resources
+C:\Users\lbalestra\source\repos\NovaAlianca\NovaAlianca\obj\Debug\NovaAlianca.Apresentacao.PaginaRelatorio6.resources
+C:\Users\lbalestra\source\repos\NovaAlianca\NovaAlianca\obj\Debug\NovaAlianca.Apresentacao.ResumoPedido.resources

@@ -33,14 +33,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnCancelarPizza = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnFinalizarPizza = new System.Windows.Forms.Button();
             this.lstPizzaAndamento = new System.Windows.Forms.ListView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lstUltimosPedidos = new System.Windows.Forms.ListView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblQtdPizzasHoje = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnCancelarPizza = new System.Windows.Forms.Button();
+            this.btnFinalizarPizza = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -78,6 +80,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.btnCancelarPizza);
             this.panel1.Controls.Add(this.label4);
@@ -93,60 +97,21 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(254, 195);
+            this.label5.Location = new System.Drawing.Point(251, 195);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 16);
             this.label5.TabIndex = 5;
             this.label5.Text = "Finalizar";
             // 
-            // btnCancelarPizza
-            // 
-            this.btnCancelarPizza.BackColor = System.Drawing.Color.Transparent;
-            this.btnCancelarPizza.BackgroundImage = global::NovaAlianca.Properties.Resources.images1;
-            this.btnCancelarPizza.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCancelarPizza.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelarPizza.FlatAppearance.BorderSize = 0;
-            this.btnCancelarPizza.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnCancelarPizza.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnCancelarPizza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarPizza.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarPizza.Location = new System.Drawing.Point(412, 184);
-            this.btnCancelarPizza.Name = "btnCancelarPizza";
-            this.btnCancelarPizza.Size = new System.Drawing.Size(33, 36);
-            this.btnCancelarPizza.TabIndex = 3;
-            this.btnCancelarPizza.Tag = "";
-            this.btnCancelarPizza.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnCancelarPizza.UseVisualStyleBackColor = false;
-            this.btnCancelarPizza.Click += new System.EventHandler(this.btnCancelarPizza_Click);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(353, 195);
+            this.label4.Location = new System.Drawing.Point(357, 195);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 16);
             this.label4.TabIndex = 4;
             this.label4.Text = "Cancelar";
-            // 
-            // btnFinalizarPizza
-            // 
-            this.btnFinalizarPizza.BackColor = System.Drawing.Color.Transparent;
-            this.btnFinalizarPizza.BackgroundImage = global::NovaAlianca.Properties.Resources._41462_200;
-            this.btnFinalizarPizza.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFinalizarPizza.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFinalizarPizza.FlatAppearance.BorderSize = 0;
-            this.btnFinalizarPizza.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnFinalizarPizza.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnFinalizarPizza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFinalizarPizza.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinalizarPizza.Location = new System.Drawing.Point(302, 184);
-            this.btnFinalizarPizza.Name = "btnFinalizarPizza";
-            this.btnFinalizarPizza.Size = new System.Drawing.Size(33, 38);
-            this.btnFinalizarPizza.TabIndex = 2;
-            this.btnFinalizarPizza.Tag = " Finalizar Pizza";
-            this.btnFinalizarPizza.UseVisualStyleBackColor = false;
-            this.btnFinalizarPizza.Click += new System.EventHandler(this.btnFinalizarPizza_Click);
             // 
             // lstPizzaAndamento
             // 
@@ -207,6 +172,74 @@
             this.lblQtdPizzasHoje.TabIndex = 3;
             this.lblQtdPizzasHoje.Text = "0";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(147, 195);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 16);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Visualizar";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = global::NovaAlianca.Properties.Resources.download;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(204, 189);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(28, 28);
+            this.button1.TabIndex = 6;
+            this.button1.Tag = " Finalizar Pizza";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnCancelarPizza
+            // 
+            this.btnCancelarPizza.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancelarPizza.BackgroundImage = global::NovaAlianca.Properties.Resources.images1;
+            this.btnCancelarPizza.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCancelarPizza.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelarPizza.FlatAppearance.BorderSize = 0;
+            this.btnCancelarPizza.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnCancelarPizza.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnCancelarPizza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarPizza.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarPizza.Location = new System.Drawing.Point(417, 187);
+            this.btnCancelarPizza.Name = "btnCancelarPizza";
+            this.btnCancelarPizza.Size = new System.Drawing.Size(28, 33);
+            this.btnCancelarPizza.TabIndex = 3;
+            this.btnCancelarPizza.Tag = "";
+            this.btnCancelarPizza.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCancelarPizza.UseVisualStyleBackColor = false;
+            this.btnCancelarPizza.Click += new System.EventHandler(this.btnCancelarPizza_Click);
+            // 
+            // btnFinalizarPizza
+            // 
+            this.btnFinalizarPizza.BackColor = System.Drawing.Color.Transparent;
+            this.btnFinalizarPizza.BackgroundImage = global::NovaAlianca.Properties.Resources._41462_200;
+            this.btnFinalizarPizza.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFinalizarPizza.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFinalizarPizza.FlatAppearance.BorderSize = 0;
+            this.btnFinalizarPizza.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnFinalizarPizza.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnFinalizarPizza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinalizarPizza.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinalizarPizza.Location = new System.Drawing.Point(302, 184);
+            this.btnFinalizarPizza.Name = "btnFinalizarPizza";
+            this.btnFinalizarPizza.Size = new System.Drawing.Size(33, 38);
+            this.btnFinalizarPizza.TabIndex = 2;
+            this.btnFinalizarPizza.Tag = " Finalizar Pizza";
+            this.btnFinalizarPizza.UseVisualStyleBackColor = false;
+            this.btnFinalizarPizza.Click += new System.EventHandler(this.btnFinalizarPizza_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,5 +278,7 @@
         private System.Windows.Forms.ListView lstUltimosPedidos;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button1;
     }
 }

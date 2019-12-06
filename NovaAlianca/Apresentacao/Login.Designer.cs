@@ -39,6 +39,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnBanco = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -150,6 +151,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnBanco);
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.btnSair);
             this.panel3.Controls.Add(this.panel1);
@@ -167,6 +169,20 @@
             this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login_MouseDown);
             this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Login_MouseMove);
             this.panel3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Login_MouseUp);
+            // 
+            // btnBanco
+            // 
+            this.btnBanco.BackgroundImage = global::NovaAlianca.Properties.Resources.images__1_;
+            this.btnBanco.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBanco.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBanco.FlatAppearance.BorderSize = 0;
+            this.btnBanco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBanco.Location = new System.Drawing.Point(235, 285);
+            this.btnBanco.Name = "btnBanco";
+            this.btnBanco.Size = new System.Drawing.Size(17, 16);
+            this.btnBanco.TabIndex = 9;
+            this.btnBanco.UseVisualStyleBackColor = true;
+            this.btnBanco.Click += new System.EventHandler(this.btnBanco_Click);
             // 
             // Login
             // 
@@ -200,6 +216,7 @@
         private System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnBanco;
     }
 }
 

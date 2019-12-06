@@ -52,7 +52,19 @@ namespace NovaAlianca.Apresentacao
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-            FinalizarPedido.ActiveForm.Close();
+            PaginaRelatorio1.ActiveForm.Close();
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            printDocument1.Print();
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Bitmap be = new Bitmap(this.dtgCliente.Width, this.dtgCliente.Height);
+            dtgCliente.DrawToBitmap(be, new Rectangle(0, 0, this.dtgCliente.Width, this.dtgCliente.Height));
+            e.Graphics.DrawImage(be, 10, 10);
         }
     }
 }

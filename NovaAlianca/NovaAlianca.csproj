@@ -47,6 +47,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Apresentacao\ResumoPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao\ResumoPedido.Designer.cs">
+      <DependentUpon>ResumoPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao\EscolherBancoDados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao\EscolherBancoDados.Designer.cs">
+      <DependentUpon>EscolherBancoDados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao\PaginaRelatorio6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao\PaginaRelatorio6.Designer.cs">
+      <DependentUpon>PaginaRelatorio6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao\PaginaRelatorio5 .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao\PaginaRelatorio5 .Designer.cs">
+      <DependentUpon>PaginaRelatorio5 .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao\PaginaRelatorio4 .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao\PaginaRelatorio4 .Designer.cs">
+      <DependentUpon>PaginaRelatorio4 .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Apresentacao\PaginaRelatorio3 .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao\PaginaRelatorio3 .Designer.cs">
+      <DependentUpon>PaginaRelatorio3 .cs</DependentUpon>
+    </Compile>
     <Compile Include="Apresentacao\PaginaRelatorio2 .cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +169,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProjetoPizzariaDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ProjetoPizzariaDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjetoPizzariaDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ProjetoPizzariaDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjetoPizzariaDataSet11.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ProjetoPizzariaDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -163,7 +209,35 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProjetoPizzariaDataSet7.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ProjetoPizzariaDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjetoPizzariaDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ProjetoPizzariaDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjetoPizzariaDataSet9.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Apresentacao\ResumoPedido.resx">
+      <DependentUpon>ResumoPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao\EscolherBancoDados.resx">
+      <DependentUpon>EscolherBancoDados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao\PaginaRelatorio6.resx">
+      <DependentUpon>PaginaRelatorio6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao\PaginaRelatorio5 .resx">
+      <DependentUpon>PaginaRelatorio5 .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao\PaginaRelatorio4 .resx">
+      <DependentUpon>PaginaRelatorio4 .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao\PaginaRelatorio3 .resx">
+      <DependentUpon>PaginaRelatorio3 .cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Apresentacao\PaginaRelatorio2 .resx">
       <DependentUpon>PaginaRelatorio2 .cs</DependentUpon>
     </EmbeddedResource>
@@ -232,6 +306,28 @@
     <None Include="ProjetoPizzariaDataSet1.xss">
       <DependentUpon>ProjetoPizzariaDataSet1.xsd</DependentUpon>
     </None>
+    <None Include="ProjetoPizzariaDataSet10.xsc">
+      <DependentUpon>ProjetoPizzariaDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="ProjetoPizzariaDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjetoPizzariaDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjetoPizzariaDataSet10.xss">
+      <DependentUpon>ProjetoPizzariaDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="ProjetoPizzariaDataSet11.xsc">
+      <DependentUpon>ProjetoPizzariaDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="ProjetoPizzariaDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjetoPizzariaDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjetoPizzariaDataSet11.xss">
+      <DependentUpon>ProjetoPizzariaDataSet11.xsd</DependentUpon>
+    </None>
     <None Include="ProjetoPizzariaDataSet2.xsc">
       <DependentUpon>ProjetoPizzariaDataSet2.xsd</DependentUpon>
     </None>
@@ -297,6 +393,28 @@
     </None>
     <None Include="ProjetoPizzariaDataSet7.xss">
       <DependentUpon>ProjetoPizzariaDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="ProjetoPizzariaDataSet8.xsc">
+      <DependentUpon>ProjetoPizzariaDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="ProjetoPizzariaDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjetoPizzariaDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjetoPizzariaDataSet8.xss">
+      <DependentUpon>ProjetoPizzariaDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="ProjetoPizzariaDataSet9.xsc">
+      <DependentUpon>ProjetoPizzariaDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="ProjetoPizzariaDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjetoPizzariaDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjetoPizzariaDataSet9.xss">
+      <DependentUpon>ProjetoPizzariaDataSet9.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -409,6 +527,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-save-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

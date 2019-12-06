@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblRelatorio = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.dtgCliente = new System.Windows.Forms.DataGridView();
             this.stapedidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descstapedidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +49,7 @@
             this.projetoPizzariaDataSet6 = new NovaAlianca.ProjetoPizzariaDataSet6();
             this.btnSair = new System.Windows.Forms.Button();
             this.tblClienteTableAdapter1 = new NovaAlianca.ProjetoPizzariaDataSet6TableAdapters.tblClienteTableAdapter();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblClienteBindingSource1)).BeginInit();
@@ -68,6 +70,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.btnImprimir);
             this.panel2.Controls.Add(this.dtgCliente);
             this.panel2.Controls.Add(this.btnSair);
             this.panel2.Controls.Add(this.lblRelatorio);
@@ -79,6 +82,23 @@
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login_MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Login_MouseMove);
             this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Login_MouseUp);
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.BackColor = System.Drawing.Color.Maroon;
+            this.btnImprimir.FlatAppearance.BorderSize = 0;
+            this.btnImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.ForeColor = System.Drawing.Color.White;
+            this.btnImprimir.Location = new System.Drawing.Point(422, 477);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(75, 23);
+            this.btnImprimir.TabIndex = 11;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // dtgCliente
             // 
@@ -234,7 +254,11 @@
             // 
             this.tblClienteTableAdapter1.ClearBeforeFill = true;
             // 
-            // PaginaRelatorio1
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // PaginaRelatorio2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -242,7 +266,7 @@
             this.ClientSize = new System.Drawing.Size(511, 509);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "PaginaRelatorio1";
+            this.Name = "PaginaRelatorio2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EscolherPizza";
             this.Load += new System.EventHandler(this.PaginaRelatorio_Load);
@@ -292,5 +316,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn desctpopagamentoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn qtdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn somaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnImprimir;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }

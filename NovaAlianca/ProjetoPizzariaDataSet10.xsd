@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ProjetoPizzariaDataSet10" targetNamespace="http://tempuri.org/ProjetoPizzariaDataSet10.xsd" xmlns:mstns="http://tempuri.org/ProjetoPizzariaDataSet10.xsd" xmlns="http://tempuri.org/ProjetoPizzariaDataSet10.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ProjetoPizzariaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ProjetoPizzariaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.NovaAlianca.Properties.Settings.GlobalReference.Default.ProjetoPizzariaConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblClienteTableAdapter" GeneratorDataComponentClassName="tblClienteTableAdapter" Name="tblCliente" UserDataComponentName="tblClienteTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ProjetoPizzariaConnectionString (Settings)" DbObjectName="ProjetoPizzaria.dbo.tblCliente" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        c.nme_cliente, c.nmr_telefone1, c.nmr_telefone2, c.nmr_cep, c.dsc_rua, MAX(CONVERT(varchar, p.dta_pedido, 3)) AS dta_ultimo_pedido, COUNT(p.id_pedido) AS soma
+FROM            tblCliente AS c LEFT OUTER JOIN
+                         tblPedido AS p ON p.id_cliente = c.id_cliente AND p.sta_pedido &lt;&gt; 'C'
+GROUP BY c.nme_cliente, c.nmr_telefone1, c.nmr_telefone2, c.nmr_cep, c.dsc_rua
+ORDER BY soma DESC, dta_ultimo_pedido DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="nme_cliente" DataSetColumn="nme_cliente" />
+              <Mapping SourceColumn="nmr_telefone1" DataSetColumn="nmr_telefone1" />
+              <Mapping SourceColumn="nmr_telefone2" DataSetColumn="nmr_telefone2" />
+              <Mapping SourceColumn="nmr_cep" DataSetColumn="nmr_cep" />
+              <Mapping SourceColumn="dsc_rua" DataSetColumn="dsc_rua" />
+              <Mapping SourceColumn="dta_ultimo_pedido" DataSetColumn="dta_ultimo_pedido" />
+              <Mapping SourceColumn="soma" DataSetColumn="soma" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ProjetoPizzariaDataSet10" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ProjetoPizzariaDataSet10" msprop:Generator_UserDSName="ProjetoPizzariaDataSet10">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tblCliente" msprop:Generator_TableClassName="tblClienteDataTable" msprop:Generator_TableVarName="tabletblCliente" msprop:Generator_RowChangedName="tblClienteRowChanged" msprop:Generator_TablePropName="tblCliente" msprop:Generator_RowDeletingName="tblClienteRowDeleting" msprop:Generator_RowChangingName="tblClienteRowChanging" msprop:Generator_RowEvHandlerName="tblClienteRowChangeEventHandler" msprop:Generator_RowDeletedName="tblClienteRowDeleted" msprop:Generator_RowClassName="tblClienteRow" msprop:Generator_UserTableName="tblCliente" msprop:Generator_RowEvArgName="tblClienteRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nme_cliente" msprop:Generator_ColumnVarNameInTable="columnnme_cliente" msprop:Generator_ColumnPropNameInRow="nme_cliente" msprop:Generator_ColumnPropNameInTable="nme_clienteColumn" msprop:Generator_UserColumnName="nme_cliente">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nmr_telefone1" msprop:Generator_ColumnVarNameInTable="columnnmr_telefone1" msprop:Generator_ColumnPropNameInRow="nmr_telefone1" msprop:Generator_ColumnPropNameInTable="nmr_telefone1Column" msprop:Generator_UserColumnName="nmr_telefone1" type="xs:long" minOccurs="0" />
+              <xs:element name="nmr_telefone2" msprop:Generator_ColumnVarNameInTable="columnnmr_telefone2" msprop:Generator_ColumnPropNameInRow="nmr_telefone2" msprop:Generator_ColumnPropNameInTable="nmr_telefone2Column" msprop:Generator_UserColumnName="nmr_telefone2" type="xs:long" minOccurs="0" />
+              <xs:element name="nmr_cep" msprop:Generator_ColumnVarNameInTable="columnnmr_cep" msprop:Generator_ColumnPropNameInRow="nmr_cep" msprop:Generator_ColumnPropNameInTable="nmr_cepColumn" msprop:Generator_UserColumnName="nmr_cep" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dsc_rua" msprop:Generator_ColumnVarNameInTable="columndsc_rua" msprop:Generator_ColumnPropNameInRow="dsc_rua" msprop:Generator_ColumnPropNameInTable="dsc_ruaColumn" msprop:Generator_UserColumnName="dsc_rua" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dta_ultimo_pedido" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndta_ultimo_pedido" msprop:Generator_ColumnPropNameInRow="dta_ultimo_pedido" msprop:Generator_ColumnPropNameInTable="dta_ultimo_pedidoColumn" msprop:Generator_UserColumnName="dta_ultimo_pedido" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="soma" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsoma" msprop:Generator_ColumnPropNameInRow="soma" msprop:Generator_ColumnPropNameInTable="somaColumn" msprop:Generator_UserColumnName="soma" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

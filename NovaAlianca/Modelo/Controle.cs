@@ -30,6 +30,12 @@ namespace NovaAlianca.Modelo
             return qtd.CalcularQtdPizzasHoje();
         }
 
+        internal List<string> ResumoPedido(int cdgPedido)
+        {
+            LoginDaoComandos resumoPedido = new LoginDaoComandos();
+            return resumoPedido.ResumirPedido(cdgPedido);
+        }
+
         internal List<string> PizzasEntregues()
         {
             LoginDaoComandos pizzas = new LoginDaoComandos();

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ProjetoPizzariaDataSet9" targetNamespace="http://tempuri.org/ProjetoPizzariaDataSet9.xsd" xmlns:mstns="http://tempuri.org/ProjetoPizzariaDataSet9.xsd" xmlns="http://tempuri.org/ProjetoPizzariaDataSet9.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ProjetoPizzariaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ProjetoPizzariaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.NovaAlianca.Properties.Settings.GlobalReference.Default.ProjetoPizzariaConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblPedidoTableAdapter" GeneratorDataComponentClassName="tblPedidoTableAdapter" Name="tblPedido" UserDataComponentName="tblPedidoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ProjetoPizzariaConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        SUBSTRING(CONVERT(varchar, p.dta_pedido, 20), 1, 4) AS ano, t.dsc_tpo_produto, r.dsc_produto, SUM(c.qtd_produto) AS qtd
+FROM            tblPedido AS p INNER JOIN
+                         tblComanda AS c ON c.id_comanda = p.id_comanda INNER JOIN
+                         tblProduto AS r ON r.id_produto = c.id_produto INNER JOIN
+                         tblTipoProduto AS t ON t.tpo_produto = r.tpo_produto
+WHERE        (p.sta_pedido &lt;&gt; 'C')
+GROUP BY SUBSTRING(CONVERT(varchar, p.dta_pedido, 20), 1, 4), t.dsc_tpo_produto, r.dsc_produto
+ORDER BY qtd DESC, ano DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ano" DataSetColumn="ano" />
+              <Mapping SourceColumn="dsc_tpo_produto" DataSetColumn="dsc_tpo_produto" />
+              <Mapping SourceColumn="dsc_produto" DataSetColumn="dsc_produto" />
+              <Mapping SourceColumn="qtd" DataSetColumn="qtd" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ProjetoPizzariaDataSet9" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ProjetoPizzariaDataSet9" msprop:Generator_UserDSName="ProjetoPizzariaDataSet9">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tblPedido" msprop:Generator_TableClassName="tblPedidoDataTable" msprop:Generator_TableVarName="tabletblPedido" msprop:Generator_TablePropName="tblPedido" msprop:Generator_RowDeletingName="tblPedidoRowDeleting" msprop:Generator_RowChangingName="tblPedidoRowChanging" msprop:Generator_RowEvHandlerName="tblPedidoRowChangeEventHandler" msprop:Generator_RowDeletedName="tblPedidoRowDeleted" msprop:Generator_UserTableName="tblPedido" msprop:Generator_RowChangedName="tblPedidoRowChanged" msprop:Generator_RowEvArgName="tblPedidoRowChangeEvent" msprop:Generator_RowClassName="tblPedidoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ano" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnano" msprop:Generator_ColumnPropNameInRow="ano" msprop:Generator_ColumnPropNameInTable="anoColumn" msprop:Generator_UserColumnName="ano" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dsc_tpo_produto" msprop:Generator_ColumnVarNameInTable="columndsc_tpo_produto" msprop:Generator_ColumnPropNameInRow="dsc_tpo_produto" msprop:Generator_ColumnPropNameInTable="dsc_tpo_produtoColumn" msprop:Generator_UserColumnName="dsc_tpo_produto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dsc_produto" msprop:Generator_ColumnVarNameInTable="columndsc_produto" msprop:Generator_ColumnPropNameInRow="dsc_produto" msprop:Generator_ColumnPropNameInTable="dsc_produtoColumn" msprop:Generator_UserColumnName="dsc_produto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="qtd" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnqtd" msprop:Generator_ColumnPropNameInRow="qtd" msprop:Generator_ColumnPropNameInTable="qtdColumn" msprop:Generator_UserColumnName="qtd" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

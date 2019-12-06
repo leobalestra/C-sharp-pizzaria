@@ -34,28 +34,28 @@ namespace NovaAlianca.Apresentacao
         //3
         private void btnFatMensal_Click(object sender, EventArgs e)
         {
-            PaginaRelatorio1 pagina = new PaginaRelatorio1();
+            PaginaRelatorio3 pagina = new PaginaRelatorio3();
             pagina.ShowDialog();
         }
 
         //4
         private void btnSaboresRankig_Click(object sender, EventArgs e)
         {
-            PaginaRelatorio1 pagina = new PaginaRelatorio1();
+            PaginaRelatorio4 pagina = new PaginaRelatorio4();
             pagina.ShowDialog();
         }
         
         //5
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            PaginaRelatorio1 pagina = new PaginaRelatorio1();
+            PaginaRelatorio5 pagina = new PaginaRelatorio5();
             pagina.ShowDialog();
         }
 
         //6
         private void btnFatAnual_Click(object sender, EventArgs e)
         {
-            PaginaRelatorio1 pagina = new PaginaRelatorio1();
+            PaginaRelatorio6 pagina = new PaginaRelatorio6();
             pagina.ShowDialog();
         }
     }

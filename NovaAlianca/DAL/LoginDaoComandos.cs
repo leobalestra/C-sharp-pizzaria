@@ -550,5 +550,24 @@ namespace NovaAlianca.DAL
 
         #endregion
 
+        internal List<string> ResumirPedido(int cdgPedido)
+        {
+            Conexao con = new Conexao();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+            List<string> pedido = new List<string>();
+
+            cmd.CommandText = "select sqc, dsc, tpo_produto from ( select 1 sqc, 'Qtd  -  Descrição' dsc, 'z' tpo_produto union all select 2 sqc, cast(c.qtd_produto as varchar)+ '  -  '+r.dsc_produto dsc, r.tpo_produto from tblPedido p inner join tblComanda c on c.id_comanda = p.id_comanda inner join tblProduto r on r.id_produto = c.id_produto where p.id_pedido = @id ) tb order by tb.sqc, case when tpo_produto in ('D', 'P') then 'X' else tpo_produto end";
+            cmd.Parameters.AddWithValue("@id", cdgPedido);
+            cmd.Connection = con.Conectar();
+            dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                pedido.Add(dr[1].ToString());
+            }
+            return pedido;
+        }
+
     }
 }

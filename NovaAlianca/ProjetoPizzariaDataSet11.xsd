@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ProjetoPizzariaDataSet11" targetNamespace="http://tempuri.org/ProjetoPizzariaDataSet11.xsd" xmlns:mstns="http://tempuri.org/ProjetoPizzariaDataSet11.xsd" xmlns="http://tempuri.org/ProjetoPizzariaDataSet11.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ProjetoPizzariaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ProjetoPizzariaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.NovaAlianca.Properties.Settings.GlobalReference.Default.ProjetoPizzariaConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblPedidoTableAdapter" GeneratorDataComponentClassName="tblPedidoTableAdapter" Name="tblPedido" UserDataComponentName="tblPedidoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ProjetoPizzariaConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT SUBSTRING(CONVERT(varchar, p.dta_pedido, 20), 1, 4) AS dsc_ano, 
+       CASE WHEN p.tpo_pagamento = 'C' THEN ' Crédito' WHEN p.tpo_pagamento = 'D' THEN 'Débito' WHEN p.tpo_pagamento = 'R' THEN 'Dinheiro' WHEN p.tpo_pagamento = 'V' THEN 'Vale Refeição' END AS dsc_tpo_pagamento, 
+       sum(p.id_pedido) id_pedido, sum(p.id_cliente) id_cliente, sum(p.id_comanda) id_comanda, count(p.sta_pedido) sta_pedido, count(p.dta_pedido) dta_pedido, count(p.tpo_pagamento) tpo_pagamento,
+	   COUNT(DISTINCT p.id_pedido) AS qtd, SUM(r.vlr_produto) AS soma
+FROM            tblPedido AS p INNER JOIN
+                         tblComanda AS c ON c.id_comanda = p.id_comanda INNER JOIN
+                         tblProduto AS r ON r.id_produto = c.id_produto
+WHERE        (p.sta_pedido &lt;&gt; 'C')
+GROUP BY SUBSTRING(CONVERT(varchar, p.dta_pedido, 20), 1, 4), p.tpo_pagamento
+ORDER BY dsc_ano, dsc_tpo_pagamento</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="qtd" DataSetColumn="qtd" />
+              <Mapping SourceColumn="soma" DataSetColumn="soma" />
+              <Mapping SourceColumn="dsc_ano" DataSetColumn="dsc_ano" />
+              <Mapping SourceColumn="dsc_tpo_pagamento" DataSetColumn="dsc_tpo_pagamento" />
+              <Mapping SourceColumn="id_pedido" DataSetColumn="id_pedido" />
+              <Mapping SourceColumn="id_cliente" DataSetColumn="id_cliente" />
+              <Mapping SourceColumn="id_comanda" DataSetColumn="id_comanda" />
+              <Mapping SourceColumn="sta_pedido" DataSetColumn="sta_pedido" />
+              <Mapping SourceColumn="dta_pedido" DataSetColumn="dta_pedido" />
+              <Mapping SourceColumn="tpo_pagamento" DataSetColumn="tpo_pagamento" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ProjetoPizzariaDataSet11" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ProjetoPizzariaDataSet11" msprop:Generator_UserDSName="ProjetoPizzariaDataSet11">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tblPedido" msprop:Generator_TableClassName="tblPedidoDataTable" msprop:Generator_TableVarName="tabletblPedido" msprop:Generator_RowChangedName="tblPedidoRowChanged" msprop:Generator_TablePropName="tblPedido" msprop:Generator_RowDeletingName="tblPedidoRowDeleting" msprop:Generator_RowChangingName="tblPedidoRowChanging" msprop:Generator_RowEvHandlerName="tblPedidoRowChangeEventHandler" msprop:Generator_RowDeletedName="tblPedidoRowDeleted" msprop:Generator_RowClassName="tblPedidoRow" msprop:Generator_UserTableName="tblPedido" msprop:Generator_RowEvArgName="tblPedidoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="qtd" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnqtd" msprop:Generator_ColumnPropNameInRow="qtd" msprop:Generator_ColumnPropNameInTable="qtdColumn" msprop:Generator_UserColumnName="qtd" type="xs:int" minOccurs="0" />
+              <xs:element name="soma" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsoma" msprop:Generator_ColumnPropNameInRow="soma" msprop:Generator_ColumnPropNameInTable="somaColumn" msprop:Generator_UserColumnName="soma" type="xs:decimal" minOccurs="0" />
+              <xs:element name="dsc_ano" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndsc_ano" msprop:Generator_ColumnPropNameInRow="dsc_ano" msprop:Generator_ColumnPropNameInTable="dsc_anoColumn" msprop:Generator_UserColumnName="dsc_ano" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dsc_tpo_pagamento" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndsc_tpo_pagamento" msprop:Generator_ColumnPropNameInRow="dsc_tpo_pagamento" msprop:Generator_ColumnPropNameInTable="dsc_tpo_pagamentoColumn" msprop:Generator_UserColumnName="dsc_tpo_pagamento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="id_pedido" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_pedido" msprop:Generator_ColumnPropNameInRow="id_pedido" msprop:Generator_ColumnPropNameInTable="id_pedidoColumn" msprop:Generator_UserColumnName="id_pedido" type="xs:int" minOccurs="0" />
+              <xs:element name="id_cliente" msprop:Generator_ColumnVarNameInTable="columnid_cliente" msprop:Generator_ColumnPropNameInRow="id_cliente" msprop:Generator_ColumnPropNameInTable="id_clienteColumn" msprop:Generator_UserColumnName="id_cliente" type="xs:int" minOccurs="0" />
+              <xs:element name="id_comanda" msprop:Generator_ColumnVarNameInTable="columnid_comanda" msprop:Generator_ColumnPropNameInRow="id_comanda" msprop:Generator_ColumnPropNameInTable="id_comandaColumn" msprop:Generator_UserColumnName="id_comanda" type="xs:int" minOccurs="0" />
+              <xs:element name="sta_pedido" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsta_pedido" msprop:Generator_ColumnPropNameInRow="sta_pedido" msprop:Generator_ColumnPropNameInTable="sta_pedidoColumn" msprop:Generator_UserColumnName="sta_pedido" type="xs:int" minOccurs="0" />
+              <xs:element name="dta_pedido" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndta_pedido" msprop:Generator_ColumnPropNameInRow="dta_pedido" msprop:Generator_ColumnPropNameInTable="dta_pedidoColumn" msprop:Generator_UserColumnName="dta_pedido" type="xs:int" minOccurs="0" />
+              <xs:element name="tpo_pagamento" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntpo_pagamento" msprop:Generator_ColumnPropNameInRow="tpo_pagamento" msprop:Generator_ColumnPropNameInTable="tpo_pagamentoColumn" msprop:Generator_UserColumnName="tpo_pagamento" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tblPedido" />
+      <xs:field xpath="mstns:id_pedido" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

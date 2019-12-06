@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ProjetoPizzariaDataSet8" targetNamespace="http://tempuri.org/ProjetoPizzariaDataSet8.xsd" xmlns:mstns="http://tempuri.org/ProjetoPizzariaDataSet8.xsd" xmlns="http://tempuri.org/ProjetoPizzariaDataSet8.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ProjetoPizzariaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ProjetoPizzariaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.NovaAlianca.Properties.Settings.GlobalReference.Default.ProjetoPizzariaConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblComandaTableAdapter" GeneratorDataComponentClassName="tblComandaTableAdapter" Name="tblComanda" UserDataComponentName="tblComandaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ProjetoPizzariaConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        SUBSTRING(CONVERT(varchar, p.dta_pedido, 20), 1, 4) AS ano, SUBSTRING(CONVERT(varchar, p.dta_pedido, 9), 1, 3) AS mes, COUNT(DISTINCT p.id_pedido) AS qtd, SUM(r.vlr_produto) AS soma
+FROM            tblPedido AS p INNER JOIN
+                         tblComanda AS c ON c.id_comanda = p.id_comanda INNER JOIN
+                         tblProduto AS r ON r.id_produto = c.id_produto
+WHERE        (p.sta_pedido &lt;&gt; 'C')
+GROUP BY SUBSTRING(CONVERT(varchar, p.dta_pedido, 20), 1, 4), SUBSTRING(CONVERT(varchar, p.dta_pedido, 9), 1, 3)
+ORDER BY ano, mes</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ano" DataSetColumn="ano" />
+              <Mapping SourceColumn="mes" DataSetColumn="mes" />
+              <Mapping SourceColumn="qtd" DataSetColumn="qtd" />
+              <Mapping SourceColumn="soma" DataSetColumn="soma" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ProjetoPizzariaDataSet8" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ProjetoPizzariaDataSet8" msprop:Generator_UserDSName="ProjetoPizzariaDataSet8">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tblComanda" msprop:Generator_TableClassName="tblComandaDataTable" msprop:Generator_TableVarName="tabletblComanda" msprop:Generator_RowChangedName="tblComandaRowChanged" msprop:Generator_TablePropName="tblComanda" msprop:Generator_RowDeletingName="tblComandaRowDeleting" msprop:Generator_RowChangingName="tblComandaRowChanging" msprop:Generator_RowEvHandlerName="tblComandaRowChangeEventHandler" msprop:Generator_RowDeletedName="tblComandaRowDeleted" msprop:Generator_RowClassName="tblComandaRow" msprop:Generator_UserTableName="tblComanda" msprop:Generator_RowEvArgName="tblComandaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ano" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnano" msprop:Generator_ColumnPropNameInRow="ano" msprop:Generator_ColumnPropNameInTable="anoColumn" msprop:Generator_UserColumnName="ano" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="mes" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnmes" msprop:Generator_ColumnPropNameInRow="mes" msprop:Generator_ColumnPropNameInTable="mesColumn" msprop:Generator_UserColumnName="mes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="qtd" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnqtd" msprop:Generator_ColumnPropNameInRow="qtd" msprop:Generator_ColumnPropNameInTable="qtdColumn" msprop:Generator_UserColumnName="qtd" type="xs:int" minOccurs="0" />
+              <xs:element name="soma" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsoma" msprop:Generator_ColumnPropNameInRow="soma" msprop:Generator_ColumnPropNameInTable="somaColumn" msprop:Generator_UserColumnName="soma" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

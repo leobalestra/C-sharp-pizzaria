@@ -15,6 +15,7 @@ namespace NovaAlianca.Apresentacao
     public partial class Home : Form
     {
         Controle controle = new Controle();
+        public static int _cdgPedido = 0;
 
         public Home()
         {
@@ -128,6 +129,19 @@ namespace NovaAlianca.Apresentacao
             }
             else
                 MessageBox.Show("Escolha uma pizza para Cancelar!");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (this.lstPizzaAndamento.SelectedItems.Count > 0)
+            {
+                string linha = lstPizzaAndamento.SelectedItems[0].Text;
+                _cdgPedido = Convert.ToInt32(linha.Substring(linha.IndexOf('(') + 5, (linha.IndexOf(')') - linha.IndexOf('(')) - 5));
+                ResumoPedido pagina = new ResumoPedido();
+                pagina.ShowDialog();
+            }
+            else
+                MessageBox.Show("Escolha uma pizza para Visualizar!");
         }
     }
 }

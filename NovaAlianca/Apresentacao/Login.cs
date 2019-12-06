@@ -19,6 +19,7 @@ namespace NovaAlianca
         public Login()
         {
             InitializeComponent();
+            EscolherBancoDados._bancodeDados = @"(localdb)\Servidor";
         }
 
         private void btnConectar_Click(object sender, EventArgs e)
@@ -107,6 +108,12 @@ namespace NovaAlianca
             {
                 btnConectar.PerformClick();
             }
+        }
+
+        private void btnBanco_Click(object sender, EventArgs e)
+        {
+            EscolherBancoDados banco = new EscolherBancoDados();
+            banco.ShowDialog();
         }
     }
 }
