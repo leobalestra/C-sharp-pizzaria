@@ -40,7 +40,7 @@ namespace NovaAlianca
                 }
                 else
                 {
-                    MessageBox.Show("Login não encontrado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Login/senha inválidos", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
